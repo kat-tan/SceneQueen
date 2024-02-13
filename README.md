@@ -2,6 +2,7 @@
 CSC 325 Capstone Project
 
 WRSPM Analysis
+
 World Assumptions:
 Users have basic knowledge of stage layouts and production elements.
 Users have access to a device with computing capabilities

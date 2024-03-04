@@ -1,4 +1,4 @@
-# Capstone-Project
+# SceneQueen
 CSC 325 Capstone Project
 
 This application will allow users (stage directors and students for low budget performances) to create set designs for scenes in a performance. Users will be able to utilize various shapes and objects on a 2D plane, viewing their design from the top down. They can also utilize various lighting styles. Users must first log in with a google account to create a profile. The platform will allow for multiple designs to be saved to a profile. 

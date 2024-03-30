@@ -13,7 +13,7 @@
             <Image url="@lights.jpeg" />
          </image>
       </ImageView>
-      <Text fill="#4359ff" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="5.0" text="SceneQueen">
+      <Text fill="#4359ff" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="3.0" text="SceneQueen">
          <font>
             <Font name="Cochin Bold" size="57.0" />
          </font>

@@ -18,7 +18,7 @@ public class PrimaryController {
     @FXML
     protected void handleSubmitButton() throws IOException {
         SceneQueenApp.setRoot("MainPage");
-        System.out.println("next page");
+        System.out.println("kat");
     }
 
     @FXML

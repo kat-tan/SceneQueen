@@ -24,38 +24,38 @@ public class SplashScreenController implements Initializable {
     private VBox vBox;
     @FXML
     public void initialize(URL url, ResourceBundle rb) {
-        splashScreen();
-    }
-
-    private void splashScreen() {
-        new Thread() {
-            public void run() {
-                try {
-                    Thread.sleep(400);
-                } catch (InterruptedException e) {
-                    System.out.println("e");
-                }
-                Platform.runLater(new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            vBox = FXMLLoader.load(getClass().getResource("SignInPage"));
-                            Stage stage = new Stage();
-                            Scene scene = new Scene(vBox);
-                            stage.setTitle("Welcome to SceneQueen");
-                            stage.setScene(scene);
-                            stage.show();
-
-                            splashRoot.getScene().getWindow().hide();
-                        } catch (IOException e) {
-                            throw new RuntimeException(e);
-                        }
-                    }
-                });
-            }
-        }.start();
 
     }
+
+//    private void splashScreen() {
+//        new Thread() {
+//            public void run() {
+//                try {
+//                    Thread.sleep(400);
+//                } catch (InterruptedException e) {
+//                    System.out.println("e");
+//                }
+//                Platform.runLater(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        try {
+//                            vBox = FXMLLoader.load(SceneQueenApp.class.getResource("Welcome"));
+//                            Stage stage = new Stage();
+//                            Scene scene = new Scene(vBox);
+//                            stage.setTitle("Welcome to SceneQueen");
+//                            stage.setScene(scene);
+//                            stage.show();
+//
+//                            splashRoot.getScene().getWindow().hide();
+//                        } catch (IOException e) {
+//                            throw new RuntimeException(e);
+//                        }
+//                    }
+//                });
+//            }
+//        }.start();
+//
+//    }
 //    class SplashScreen extends Thread {
 //        public void run() {
 //            try {
@@ -64,7 +64,7 @@ public class SplashScreenController implements Initializable {
 //                Platform.runLater(new Runnable() {
 //
 //                    public void run() {
-//                        FXMLLoader fxmlLoader = new FXMLLoader(SceneQueenApp.class.getResource("SignInPage.fxml"));
+//                        FXMLLoader fxmlLoader = new FXMLLoader(SceneQueenApp.class.getResource("Welcome.fxml"));
 //
 //
 //                        Scene scene;
@@ -87,5 +87,5 @@ public class SplashScreenController implements Initializable {
 //                throw new RuntimeException(e);
 //            }
 //        }
-//    }
+    // }
 }

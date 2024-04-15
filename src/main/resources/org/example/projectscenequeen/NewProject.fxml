@@ -133,7 +133,7 @@
                   </HBox>
                </top>
                <center>
-                  <VBox prefHeight="200.0" prefWidth="100.0" stylesheets="@NewProject.css" BorderPane.alignment="CENTER">
+                  <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: white;" stylesheets="@NewProject.css" BorderPane.alignment="CENTER">
                      <BorderPane.margin>
                         <Insets bottom="20.0" left="20.0" right="20.0" />
                      </BorderPane.margin>

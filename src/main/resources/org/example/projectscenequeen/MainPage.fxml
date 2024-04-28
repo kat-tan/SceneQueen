@@ -83,6 +83,25 @@
                   <Font name="Cochin" size="20.0" />
                </font>
             </Label>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <AnchorPane fx:id="thirdToolTip" layoutX="4.0" prefHeight="224.0" prefWidth="278.0">
+                     <children>
+                        <Text layoutX="16.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Here is where all of the brackgroud optioins will appear, once you start a project. You can also pick from old projects and all other options. Make your you save your projects so you can come back to them!" textAlignment="CENTER" wrappingWidth="242.5066089630127">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="NoThanksButton2" layoutX="14.0" layoutY="148.0" mnemonicParsing="false" onAction="#handleNoThanksButton" prefHeight="37.0" prefWidth="148.0" text="No thank you" />
+                        <Button fx:id="NextButton2" layoutX="196.0" layoutY="148.0" mnemonicParsing="false" onAction="#handleNextButton" text="Next">
+                           <font>
+                              <Font name="Bookshelf Symbol 7" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
          </children>
          <BorderPane.margin>
             <Insets bottom="40.0" left="40.0" right="40.0" />
@@ -103,21 +122,49 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <AnchorPane fx:id="FirstToolTip" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: pink;">
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="NoThanksButton" layoutX="37.0" layoutY="115.0" mnemonicParsing="false" onAction="#handleNoThanksButton" text="No thank you" />
-                  <Button fx:id="NextButton" layoutX="225.0" layoutY="115.0" mnemonicParsing="false" text="Next">
-                     <font>
-                        <Font name="Bookshelf Symbol 7" size="12.0" />
-                     </font></Button>
-                  <Text layoutX="45.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME!!  For tips press next!!!" textAlignment="CENTER" wrappingWidth="240.072265625">
-                     <font>
-                        <Font name="Caladea" size="24.0" />
-                     </font></Text>
+                  <AnchorPane fx:id="firstToolTip" layoutX="14.0" layoutY="166.0" prefHeight="187.0" prefWidth="338.0" style="-fx-background-color: pink;">
+                     <children>
+                        <Button fx:id="NoThanksButton" layoutX="37.0" layoutY="115.0" mnemonicParsing="false" onAction="#handleNoThanksButton" text="No thank you" />
+                        <Button fx:id="NextButton" layoutX="225.0" layoutY="115.0" mnemonicParsing="false" onAction="#handleNextButton" text="Next">
+                           <font>
+                              <Font name="Bookshelf Symbol 7" size="12.0" />
+                           </font>
+                        </Button>
+                        <Text layoutX="45.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME!!  For tips press next!!!" textAlignment="CENTER" wrappingWidth="240.072265625">
+                           <font>
+                              <Font name="Caladea" size="24.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="secondToolTip" layoutX="1.0" layoutY="-52.0" prefHeight="182.0" prefWidth="296.0">
+                     <children>
+                        <Button fx:id="NoThanksButton1" layoutX="14.0" layoutY="122.0" mnemonicParsing="false" onAction="#handleNoThanksButton" prefHeight="44.0" prefWidth="156.0" text="No thank you" />
+                        <Text layoutX="14.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Here You can create a new project or continue an old one!!" wrappingWidth="249.4227294921875">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="NextButton1" layoutX="195.0" layoutY="122.0" mnemonicParsing="false" onAction="#handleNextButton" text="Next">
+                           <font>
+                              <Font name="Bookshelf Symbol 7" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="fourthToolTip" layoutX="378.0" prefHeight="200.0" prefWidth="324.0">
+                     <children>
+                        <Text layoutX="7.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Here you project will pop out, you can also drap different shapes into the screen. And change the lighting and backgrouond !" wrappingWidth="323.82275390625">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="NoThanksButton3" layoutX="14.0" layoutY="142.0" mnemonicParsing="false" onAction="#handleNoThanksButton" prefHeight="44.0" prefWidth="193.0" text="No thank you!" />
+                     </children>
+                  </AnchorPane>
                </children>
-               <VBox.margin>
-                  <Insets bottom="50.0" left="50.0" right="500.0" top="50.0" />
-               </VBox.margin>
             </AnchorPane>
          </children>
          <padding>

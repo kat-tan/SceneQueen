@@ -1,6 +1,4 @@
-package org.example.projectscenequeen;
-
-import javafx.event.ActionEvent;
+package org.CSC325Capstone.projectscenequeen;
 
 import java.io.IOException;
 

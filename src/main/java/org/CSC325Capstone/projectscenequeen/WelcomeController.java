@@ -1,14 +1,10 @@
-package org.example.projectscenequeen;
+package org.CSC325Capstone.projectscenequeen;
 
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
-
-import static org.example.projectscenequeen.SceneQueenApp.loadFXML;
 
 public class WelcomeController {
     @FXML

@@ -15,7 +15,7 @@ public class SceneQueenApp extends Application {
     public void start(Stage stage) throws IOException {
 //        FXMLLoader fxmlLoader = new FXMLLoader(SceneQueenApp.class.getResource("SplashScreen.fxml"));
 //        Scene scene = new Scene(fxmlLoader.load());
-        scene = new Scene(loadFXML("MainPage"));
+        scene = new Scene(loadFXML("Welcome"));
 
 //        stage.initStyle(StageStyle.UNDECORATED);
         stage.setScene(scene);

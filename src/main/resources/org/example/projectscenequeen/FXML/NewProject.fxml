@@ -17,12 +17,12 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" stylesheets="@SceneQueen.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.projectscenequeen.NewProjectController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" stylesheets="@../CSS/SceneQueen.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.projectscenequeen.NewProjectController">
    <top>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0" stylesheets="@SceneQueen.css" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0" stylesheets="@../CSS/SceneQueen.css" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="112.0" fitWidth="295.0" pickOnBounds="true" preserveRatio="true" />
-            <MenuButton fx:id="aboutButton" graphicTextGap="0.0" mnemonicParsing="false" stylesheets="@SceneQueen.css" text="About">
+            <MenuButton fx:id="aboutButton" graphicTextGap="0.0" mnemonicParsing="false" stylesheets="@../CSS/SceneQueen.css" text="About">
               <items>
                 <MenuItem fx:id="meetTheTeamButton" mnemonicParsing="false" onAction="#onMeetTheTeamMenuItem" text="Meet the Team" />
               </items>
@@ -33,7 +33,7 @@
                   <Tooltip text="About Tooltip" />
                </tooltip>
             </MenuButton>
-             <MenuButton mnemonicParsing="false" stylesheets="@SceneQueen.css" text="Services">
+             <MenuButton mnemonicParsing="false" stylesheets="@../CSS/SceneQueen.css" text="Services">
                  <items>
                      <MenuItem mnemonicParsing="false" text="Item Request" />
                  </items>
@@ -41,7 +41,7 @@
                      <Font size="30.0" />
                  </font>
              </MenuButton>
-            <MenuButton contentDisplay="TEXT_ONLY" mnemonicParsing="false" stylesheets="@SceneQueen.css" text="Collections">
+            <MenuButton contentDisplay="TEXT_ONLY" mnemonicParsing="false" stylesheets="@../CSS/SceneQueen.css" text="Collections">
                <items>
                   <MenuItem mnemonicParsing="false" text="My Collections" />
                </items>
@@ -49,7 +49,7 @@
                   <Font size="30.0" />
                </font>
             </MenuButton>
-            <MenuButton contentDisplay="TEXT_ONLY" mnemonicParsing="false" stylesheets="@SceneQueen.css" text="Contact">
+            <MenuButton contentDisplay="TEXT_ONLY" mnemonicParsing="false" stylesheets="@../CSS/SceneQueen.css" text="Contact">
                <items>
                   <MenuItem mnemonicParsing="false" text="Contact the Team" />
                   <MenuItem mnemonicParsing="false" text="Help" />
@@ -58,7 +58,7 @@
                   <Font size="30.0" />
                </font>
             </MenuButton>
-            <MenuButton contentDisplay="TEXT_ONLY" mnemonicParsing="false" stylesheets="@SceneQueen.css" text="Account">
+            <MenuButton contentDisplay="TEXT_ONLY" mnemonicParsing="false" stylesheets="@../CSS/SceneQueen.css" text="Account">
                <items>
                   <MenuItem mnemonicParsing="false" text="Profile" />
                   <MenuItem mnemonicParsing="false" text="Settings" />
@@ -75,7 +75,7 @@
       </HBox>
    </top>
    <center>
-      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: #000000; -fx-border-width: 2;" stylesheets="@SceneQueen.css" BorderPane.alignment="BOTTOM_CENTER">
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: #000000; -fx-border-width: 2;" stylesheets="@../CSS/SceneQueen.css" BorderPane.alignment="BOTTOM_CENTER">
          <BorderPane.margin>
             <Insets bottom="40.0" left="40.0" right="40.0" />
          </BorderPane.margin>
@@ -85,7 +85,7 @@
                   <Insets bottom="20.0" top="20.0" />
                </VBox.margin>
             </Label>
-            <GridPane alignment="BOTTOM_CENTER" gridLinesVisible="true" prefHeight="608.0" prefWidth="272.0" style="-fx-hgap: 1; -fx-vgap: 1;" stylesheets="@NewProject.css" VBox.vgrow="NEVER">
+            <GridPane alignment="BOTTOM_CENTER" gridLinesVisible="true" prefHeight="608.0" prefWidth="272.0" style="-fx-hgap: 1; -fx-vgap: 1;" stylesheets="@../CSS/NewProject.css" VBox.vgrow="NEVER">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="136.0" minWidth="10.0" prefWidth="136.0" />
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="136.0" minWidth="10.0" prefWidth="136.0" />
@@ -103,7 +103,7 @@
                <children>
                   <ImageView fitHeight="82.0" fitWidth="89.0" pickOnBounds="true" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER">
                      <image>
-                        <Image url="@usericon.png" />
+                        <Image url="@../Images/usericon.png" />
                      </image>
                   </ImageView>
                </children>
@@ -121,7 +121,7 @@
                <top>
                   <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
                      <children>
-                        <TextField prefHeight="36.0" prefWidth="290.0" promptText="Project Name" stylesheets="@SceneQueen.css">
+                        <TextField prefHeight="36.0" prefWidth="290.0" promptText="Project Name" stylesheets="@../CSS/SceneQueen.css">
                            <font>
                               <Font name="Cochin" size="20.0" />
                            </font></TextField>
@@ -133,7 +133,7 @@
                   </HBox>
                </top>
                <center>
-                  <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: white;" stylesheets="@NewProject.css" BorderPane.alignment="CENTER">
+                  <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: white;" stylesheets="@../CSS/NewProject.css" BorderPane.alignment="CENTER">
                      <BorderPane.margin>
                         <Insets bottom="20.0" left="20.0" right="20.0" />
                      </BorderPane.margin>

@@ -64,7 +64,7 @@ public class SplashScreenController implements Initializable {
 //                Platform.runLater(new Runnable() {
 //
 //                    public void run() {
-//                        FXMLLoader fxmlLoader = new FXMLLoader(SceneQueenApp.class.getResource("Welcome.fxml"));
+//                        FXMLLoader fxmlLoader = new FXMLLoader(SceneQueenApp.class.getResource("SignIn.fxml"));
 //
 //
 //                        Scene scene;

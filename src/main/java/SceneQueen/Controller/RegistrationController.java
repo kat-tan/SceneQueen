@@ -1,11 +1,12 @@
-package org.example.projectscenequeen;
+package SceneQueen;
 
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.Firestore;
+import com.google.firebase.auth.FirebaseAuthException;
+import com.google.firebase.auth.UserRecord;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -44,7 +45,7 @@ public class RegistrationController {
 
         if (!password.equals(confirmPassword)) {
             // Display error message to User
-            System.out.println("Passwords do not match");
+            System.out.println("Passwords do not match.");
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Error");
@@ -64,7 +65,16 @@ public class RegistrationController {
         Firestore firestore = SceneQueenApp.getFirestore();
         DocumentReference docRef = firestore.collection("users").document(UUID.randomUUID().toString());
 
+        UserRecord userRecord;
+
         try {
+            UserRecord.CreateRequest request = new UserRecord.CreateRequest()
+                    .setEmail(email)
+                    .setEmailVerified(true);
+
+            userRecord = SceneQueenApp.fauth.createUser(request);
+            System.out.println("Email authenticated.");
+
             // Check if user already exists
             DocumentSnapshot document = docRef.get().get();
             if (document.exists()) {
@@ -84,6 +94,8 @@ public class RegistrationController {
         } catch (InterruptedException | ExecutionException e) {
             // Error accessing database, display error message or handle accordingly
             System.out.println("Error accessing database: " + e.getMessage());
+        } catch (FirebaseAuthException e) {
+            System.out.println("Error authenticating.");
         }
     }
 }

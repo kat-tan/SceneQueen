@@ -1,4 +1,4 @@
-package org.example.projectscenequeen;
+package SceneQueen;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

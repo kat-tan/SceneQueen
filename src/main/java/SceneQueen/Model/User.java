@@ -1,4 +1,4 @@
-package org.example.projectscenequeen;
+package SceneQueen;
 
 public class User {
     private String email;

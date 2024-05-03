@@ -1,4 +1,4 @@
-package org.example.projectscenequeen;
+package SceneQueen;
 
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.CollectionReference;

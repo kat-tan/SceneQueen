@@ -1,4 +1,4 @@
-package org.example.projectscenequeen;
+package SceneQueen;
 
 
 import javafx.fxml.FXML;
@@ -45,14 +45,13 @@ public class DragController {
 
     @FXML
     void dragDetect_table(MouseEvent event) {
-
-
         Dragboard db = Table.startDragAndDrop(TransferMode.ANY);
         ClipboardContent cb = new ClipboardContent();
         cb.putImage(Table.getImage());
         db.setContent(cb);
         event.consume();
     }
+
     @FXML
     void dragDetect_Chair(MouseEvent event) {
         Dragboard db = Chair.startDragAndDrop(TransferMode.ANY);
@@ -60,10 +59,7 @@ public class DragController {
         cb.putImage(Chair.getImage());
         db.setContent(cb);
         event.consume();
-
-
     }
-
 
     @FXML
     void dragDetect_Sofa(MouseEvent event) {
@@ -116,19 +112,8 @@ public class DragController {
 
         } else if (event.getDragboard().hasImage()){
             Image image = event.getDragboard().getImage();
-
-
-
-
             ImageView imageView = new ImageView(image);
-
-
-
-
             Stage.getChildren().add(imageView);
-
-
-
 
             // Update position of the image during dragging
             imageView.setOnMousePressed(mouseEvent -> {
@@ -136,11 +121,9 @@ public class DragController {
                 y = mouseEvent.getSceneY() - imageView.getLayoutY();
             });
 
-
             imageView.setOnMouseDragged(mouseEvent -> {
                 double newX = mouseEvent.getSceneX() - x;
                 double newY = mouseEvent.getSceneY() - y;
-
 
                 // Keep the image within the bounds of the Stage
                 if (newX >= 0 && newX <= Stage.getWidth() - imageView.getFitWidth() &&
@@ -149,7 +132,6 @@ public class DragController {
                     imageView.setLayoutY(newY);
                 }
             });
-
 
             event.setDropCompleted(true);
         }

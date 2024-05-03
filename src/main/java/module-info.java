@@ -13,6 +13,6 @@ module org.example.projectscenequeen {
     requires com.google.api.apicommon;
     requires com.google.common;
 
-    opens org.example.projectscenequeen to javafx.fxml;
-    exports org.example.projectscenequeen;
+    opens SceneQueen to javafx.fxml;
+    exports SceneQueen;
 }

@@ -108,9 +108,9 @@
                      <font>
                         <Font name="Bookshelf Symbol 7" size="12.0" />
                      </font></Button>
-                  <Text layoutX="45.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME!!  For tips press next!!!" textAlignment="CENTER" wrappingWidth="240.072265625">
+                  <Text layoutX="45.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome! For tips press next!" textAlignment="CENTER" wrappingWidth="240.072265625">
                      <font>
-                        <Font name="Caladea" size="24.0" />
+                        <Font name="Cochin" size="24.0" />
                      </font></Text>
                </children>
                <VBox.margin>

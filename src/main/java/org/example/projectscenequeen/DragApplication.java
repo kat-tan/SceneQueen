@@ -10,13 +10,12 @@ import javafx.stage.Stage;
 public class DragApplication extends Application{
     public void start(Stage primaryStage) throws Exception {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/projectscenequeen/FXML/Update-view.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/projectscenequeen/FXML/DragDrop.fxml"));
         Parent root = loader.load();
         primaryStage.setTitle("Drag");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
-
 
     public static void main(String[] args) {
         launch();

@@ -8,41 +8,20 @@ import javafx.scene.input.*;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 
-
-
-
-
 public class DragController {
-
-
     @FXML
     private ImageView Chair;
-
-
     @FXML
     private Circle lights;
-
-
     @FXML
     private ImageView Sofa;
-
-
     @FXML
     private Pane Stage;
-
-
     @FXML
     private ImageView Table;
 
-
     private double x;
     private double y;
-
-
-
-
-
-
 
     @FXML
     void dragDetect_lights(MouseEvent event) {
@@ -175,8 +154,6 @@ public class DragController {
             event.setDropCompleted(true);
         }
 
-
     }
-
 
 }

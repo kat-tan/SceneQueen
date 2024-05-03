@@ -38,7 +38,7 @@ public class MainPageController {
     }
 
     @FXML
-    protected void onContinueProjectButton(){
+    protected void onContinueProjectButton() {
 
     }
 

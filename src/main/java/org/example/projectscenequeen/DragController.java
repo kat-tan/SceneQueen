@@ -38,26 +38,12 @@ public class DragController {
     private double x;
     private double y;
 
-
-
-
-
-
-
     @FXML
     void dragDetect_lights(MouseEvent event) {
-
-
         Dragboard db = lights.startDragAndDrop(TransferMode.ANY);
-
-
         ClipboardContent cb = new ClipboardContent();
         cb.putString(lights.getStyle());
-
-
         db.setContent(cb);
-
-
         event.consume();
 
 
@@ -66,7 +52,6 @@ public class DragController {
 
     @FXML
     void dragDetect_table(MouseEvent event) {
-
 
         Dragboard db = Table.startDragAndDrop(TransferMode.ANY);
         ClipboardContent cb = new ClipboardContent();
@@ -93,7 +78,6 @@ public class DragController {
         cb.putImage(Sofa.getImage());
         db.setContent(cb);
         event.consume();
-
 
     }
 
@@ -137,10 +121,7 @@ public class DragController {
 
         } else if (event.getDragboard().hasImage()){
             Image image = event.getDragboard().getImage();
-
             ImageView imageView = new ImageView(image);
-
-
             Stage.getChildren().add(imageView);
 
             // Update position of the image during dragging
@@ -149,12 +130,9 @@ public class DragController {
                 y = mouseEvent.getSceneY() - imageView.getLayoutY();
             });
 
-
             imageView.setOnMouseDragged(mouseEvent -> {
                 double newX = mouseEvent.getSceneX() - x;
                 double newY = mouseEvent.getSceneY() - y;
-
-
                 // Keep the image within the bounds of the Stage
                 if (newX >= 0 && newX <= Stage.getWidth() - imageView.getFitWidth() &&
                         newY >= 0 && newY <= Stage.getHeight() - imageView.getFitHeight()) {
@@ -162,8 +140,6 @@ public class DragController {
                     imageView.setLayoutY(newY);
                 }
             });
-
-
             event.setDropCompleted(true);
         }
 

@@ -18,22 +18,17 @@ public class DragController {
     @FXML
     private ImageView Chair;
 
-
     @FXML
     private Circle lights;
-
 
     @FXML
     private ImageView Sofa;
 
-
     @FXML
     private Pane Stage;
 
-
     @FXML
     private ImageView Table;
-
 
     private double x;
     private double y;
@@ -134,8 +129,8 @@ public class DragController {
                 double newX = mouseEvent.getSceneX() - x;
                 double newY = mouseEvent.getSceneY() - y;
                 // Keep the image within the bounds of the Stage
-                if (newX >= 0 && newX <= Stage.getWidth() - imageView.getFitWidth() &&
-                        newY >= 0 && newY <= Stage.getHeight() - imageView.getFitHeight()) {
+                if (newX >= 0 && newX <= Stage.getWidth() &&
+                        newY >= 0 && newY <= Stage.getHeight() ) {
                     imageView.setLayoutX(newX);
                     imageView.setLayoutY(newY);
                 }

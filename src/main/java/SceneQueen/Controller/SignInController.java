@@ -35,12 +35,12 @@ public class SignInController {
     }
 
     private boolean authenticateUser(String email, String password) {
-        // Note: This is a basic example and should be improved for a production environment
-        // You should hash the password and compare it to a hashed value stored in Firestore
-        // Also, consider using Firebase Authentication for a more secure authentication solution
         CollectionReference users = SceneQueenApp.fstore.collection("users");
-        Query query = users.whereEqualTo("email", email).whereEqualTo("password", password);
+        String hashedPassword = Ecryptor.encryptPassword(password);
+
+        Query query = users.whereEqualTo("email", email).whereEqualTo("password", hashedPassword);
         ApiFuture<QuerySnapshot> querySnapshot = query.get();
+        // System.out.println("Hashed Password: " + hashedPassword);
 
         try {
             List<QueryDocumentSnapshot> documents = querySnapshot.get().getDocuments();

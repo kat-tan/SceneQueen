@@ -138,18 +138,10 @@ public class DragController {
         } else if (event.getDragboard().hasImage()){
             Image image = event.getDragboard().getImage();
 
-
-
-
             ImageView imageView = new ImageView(image);
 
 
-
-
             Stage.getChildren().add(imageView);
-
-
-
 
             // Update position of the image during dragging
             imageView.setOnMousePressed(mouseEvent -> {

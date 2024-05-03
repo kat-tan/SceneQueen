@@ -10,7 +10,7 @@
    <children>
       <ImageView fitHeight="404.0" fitWidth="601.0">
          <image>
-            <Image url="@lights.jpeg" />
+            <Image url="@../Images/lights.jpeg" />
          </image>
       </ImageView>
       <Text fill="#4359ff" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="3.0" text="SceneQueen">

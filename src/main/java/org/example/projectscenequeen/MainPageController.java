@@ -13,41 +13,34 @@ import javafx.scene.layout.VBox;
 import java.io.IOException;
 
 public class MainPageController {
-    @FXML
-    private MenuButton aboutButton;
-    @FXML
-    private MenuItem meetTheTeamButton;
-    @FXML
-    private AnchorPane FirstToolTip;
-    @FXML
-    private Button NoThanksButton;
-    @FXML
-    private Button NextButton;
 
-    @FXML
-    private void handleNoThanksButton(ActionEvent event) {
+    public MenuButton aboutButton;
+    public MenuItem meetTheTeamButton;
+    public Button NoThanksButton2;
+    public Button NextButton2;
+    public AnchorPane firstToolTip;
+    public AnchorPane thirdToolTip;
+
+    public void onMeetTheTeamMenuItem(ActionEvent actionEvent) {
+    }
+
+    public void onLogoutButton(ActionEvent actionEvent) throws IOException {
+        SceneQueenApp.setRoot("SignIn");
+    }
+
+    public void onCreateProjectButton(ActionEvent actionEvent) {
+    }
+
+    public void onContinueProjectButton(ActionEvent actionEvent) {
+    }
+
+    public void handleNoThanksButton(ActionEvent actionEvent) {
         // Get the parent of FirstToolTip, which should be the VBox in the layout
-        VBox parent = (VBox) FirstToolTip.getParent();
+        VBox parent = (VBox) firstToolTip.getParent();
         // Remove the FirstToolTip from its parent
-        parent.getChildren().remove(FirstToolTip);
+        parent.getChildren().remove(firstToolTip);
     }
 
-    @FXML
-    protected void onMeetTheTeamMenuItem(ActionEvent event) {
-
-    }
-
-    @FXML
-    protected void onLogoutButton(ActionEvent actionEvent) throws IOException {
-        SceneQueenApp.setRoot("Welcome");
-    }
-
-    @FXML
-    protected void onCreateProjectButton() throws IOException {
-        SceneQueenApp.setRoot("NewProject");
-    }
-
-    @FXML
-    protected void onContinueProjectButton() {
+    public void handleNextButton(ActionEvent actionEvent) {
     }
 }

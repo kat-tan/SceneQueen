@@ -6,6 +6,7 @@ import com.google.cloud.firestore.Query;
 import com.google.cloud.firestore.QueryDocumentSnapshot;
 import com.google.cloud.firestore.QuerySnapshot;
 import javafx.fxml.FXML;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
@@ -17,16 +18,16 @@ public class SignInController {
     @FXML
     private TextField emailTextField;
     @FXML
-    private TextField passwordTextField;
+    private PasswordField passwordField;
 
     @FXML
     protected void onSubmitButton() throws IOException {
         String email = emailTextField.getText();
-        String password = passwordTextField.getText();
+        String password = passwordField.getText();
 
         boolean authenticated = authenticateUser(email, password);
 
-        if(authenticated){
+        if (authenticated) {
             SceneQueenApp.setRoot("MainPage");
         } else {
             System.out.println("Error: Not Authenticated");// Display error message

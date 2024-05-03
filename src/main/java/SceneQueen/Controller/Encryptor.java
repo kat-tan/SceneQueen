@@ -2,7 +2,7 @@ package org.example.projectscenequeen;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-public class Ecryptor{
+public class Encryptor {
     public static String encryptPassword(String password) {
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");

@@ -49,8 +49,14 @@ public class SceneQueenApp extends Application {
     }
 
     public static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(SceneQueenApp.class.getResource("/org/example/projectscenequeen/FXML/" + fxml + ".fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(SceneQueenApp.class.getResource(
+                "/org/example/projectscenequeen/FXML/" + fxml + ".fxml")
+        );
         return fxmlLoader.load();
+    }
+
+    public static Firestore getFirestore() {
+        return FirestoreClient.getFirestore();
     }
 
     public static void main(String[] args) {

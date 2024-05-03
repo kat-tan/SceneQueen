@@ -1,4 +1,4 @@
-package org.example.projectscenequeen;
+package SceneQueen;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

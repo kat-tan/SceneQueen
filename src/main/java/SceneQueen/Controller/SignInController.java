@@ -36,7 +36,7 @@ public class SignInController {
 
     private boolean authenticateUser(String email, String password) {
         CollectionReference users = SceneQueenApp.fstore.collection("users");
-        String hashedPassword = Ecryptor.encryptPassword(password);
+        String hashedPassword = Encryptor.encryptPassword(password);
 
         Query query = users.whereEqualTo("email", email).whereEqualTo("password", hashedPassword);
         ApiFuture<QuerySnapshot> querySnapshot = query.get();

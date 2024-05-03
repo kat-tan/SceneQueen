@@ -58,7 +58,7 @@ public class RegistrationController {
 
         Map<String, Object> data = new HashMap<>();
         // Hash the password
-        String hashedPassword = Ecryptor.encryptPassword(password);
+        String hashedPassword = Encryptor.encryptPassword(password);
         data.put("firstName", firstName);
         data.put("lastName", lastName);
         data.put("email", email);

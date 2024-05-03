@@ -56,10 +56,12 @@ public class RegistrationController {
         }
 
         Map<String, Object> data = new HashMap<>();
+        // Hash the password
+        String hashedPassword = Ecryptor.encryptPassword(password);
         data.put("firstName", firstName);
         data.put("lastName", lastName);
         data.put("email", email);
-        data.put("password", password);
+        data.put("password", hashedPassword);
 
         Firestore firestore = SceneQueenApp.getFirestore();
         DocumentReference docRef = firestore.collection("users").document(UUID.randomUUID().toString());
@@ -68,12 +70,12 @@ public class RegistrationController {
             // Check if user already exists
             DocumentSnapshot document = docRef.get().get();
             if (document.exists()) {
-                // User already exists, display error message or handle accordingly
+                // User already exists, display error message
                 System.out.println("User with email " + email + " already exists");
             } else {
                 // User does not exist, add user to database
                 docRef.set(data).get();
-                // User added successfully, navigate to sign in page or handle accordingly
+                // User added successfully, navigate to sign in page
                 System.out.println("User added successfully");
                 try {
                     SceneQueenApp.setRoot("SignIn");
@@ -82,7 +84,6 @@ public class RegistrationController {
                 }
             }
         } catch (InterruptedException | ExecutionException e) {
-            // Error accessing database, display error message or handle accordingly
             System.out.println("Error accessing database: " + e.getMessage());
         }
     }

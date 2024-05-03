@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
@@ -12,8 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<VBox fx:id="vBoxRoot" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="584.0" spacing="5.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.projectscenequeen.SignInController">
+<VBox fx:id="vBoxRoot" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="522.0" prefWidth="584.0" spacing="10.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.projectscenequeen.SignInController">
    <children>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to SceneQueen">
          <font>
@@ -23,9 +21,9 @@
             <Insets top="30.0" />
          </VBox.margin>
       </Text>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Login" wrappingWidth="58.88671875">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Login" wrappingWidth="74.88671875">
          <font>
-            <Font size="24.0" />
+            <Font name="Cochin" size="30.0" />
          </font>
          <VBox.margin>
             <Insets left="30.0" right="30.0" top="20.0" />
@@ -36,7 +34,7 @@
             <Font name="Cochin" size="20.0" />
          </font>
          <VBox.margin>
-            <Insets top="10.0" />
+            <Insets />
          </VBox.margin>
       </TextField>
       <TextField fx:id="passwordTextField" accessibleRole="PASSWORD_FIELD" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="36.0" prefWidth="340.0" promptText="Password" stylesheets="@../CSS/Welcome.css">
@@ -44,8 +42,13 @@
             <Font name="Cochin" size="20.0" />
          </font>
       </TextField>
-      <HBox alignment="CENTER" prefHeight="61.0" prefWidth="1920.0" spacing="116.0">
+      <HBox alignment="CENTER" prefHeight="20.0" prefWidth="584.0" spacing="116.0">
          <children>
+            <Text fill="#4000ff" onMouseClicked="#forgotPasswordPrompt" strokeType="OUTSIDE" strokeWidth="0.0" text="Forgot Password?" underline="true">
+               <font>
+                  <Font name="Cochin" size="15.0" />
+               </font>
+            </Text>
             <Button alignment="CENTER" contentDisplay="CENTER" ellipsisString="" graphicTextGap="2.0" mnemonicParsing="false" onAction="#onSubmitButton" prefHeight="36.0" prefWidth="109.0" stylesheets="@../CSS/Welcome.css" text="Submit" textFill="#4000ff">
                <font>
                   <Font name="Cochin" size="20.0" />
@@ -53,20 +56,15 @@
             </Button>
          </children>
          <VBox.margin>
-            <Insets top="-10.0" />
+            <Insets />
          </VBox.margin>
       </HBox>
-      <Text fill="#4000ff" onMouseClicked="#forgotPasswordPrompt" strokeType="OUTSIDE" strokeWidth="0.0" text="Forgot Password?" underline="true">
-         <font>
-            <Font name="Cochin" size="15.0" />
-         </font>
-      </Text>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="────── Login with ──────">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="────── Login with ──────">
          <font>
             <Font name="Cochin" size="20.0" />
          </font>
          <VBox.margin>
-            <Insets />
+            <Insets top="20.0" />
          </VBox.margin>
       </Text>
       <ImageView fitHeight="37.0" fitWidth="66.0" onMouseClicked="#onGoogleLoginImage" pickOnBounds="true" preserveRatio="true">
@@ -74,15 +72,15 @@
             <Image url="@../Images/google.png" />
          </image>
       </ImageView>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="─── Don't have an Account? ───" wrappingWidth="309.13201904296875">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="─── Don't have an account? ───" wrappingWidth="328.0">
          <font>
-            <Font size="18.0" />
+            <Font size="20.0" />
          </font>
          <VBox.margin>
-            <Insets top="30.0" />
+            <Insets top="20.0" />
          </VBox.margin>
       </Text>
-      <Text fill="#4000ff" onMouseClicked="#onSignUpHerePrompt" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up Here" underline="true">
+      <Text fill="#4000ff" onMouseClicked="#onSignUpHerePrompt" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="Sign Up Here" underline="true">
          <font>
             <Font size="16.0" />
          </font>
@@ -92,4 +90,3 @@
       <URL value="@../CSS/SceneQueen.css" />
    </stylesheets>
 </VBox>
-

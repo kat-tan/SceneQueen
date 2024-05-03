@@ -5,6 +5,9 @@ import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.Firestore;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 
@@ -19,11 +22,20 @@ public class RegistrationController {
     public TextField firstNameTextField;
     public TextField lastNameTextField;
     public TextField emailTextField;
-    public TextField passwordTextField;
-    public TextField confirmPasswordTextField;
+    public PasswordField passwordTextField;
+    public PasswordField confirmPasswordTextField;
 
     @FXML
-    public void onSubmitButton(ActionEvent actionEvent) {
+    protected void onReturnToLoginBtn() {
+        try {
+            SceneQueenApp.setRoot("SignIn");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @FXML
+    protected void onSubmitButton(ActionEvent actionEvent) {
         String firstName = firstNameTextField.getText();
         String lastName = lastNameTextField.getText();
         String email = emailTextField.getText();
@@ -33,6 +45,13 @@ public class RegistrationController {
         if (!password.equals(confirmPassword)) {
             // Display error message to User
             System.out.println("Passwords do not match");
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setHeaderText("Password Error");
+            alert.setContentText("Passwords do not match.");
+            alert.showAndWait();
+
             return;
         }
 

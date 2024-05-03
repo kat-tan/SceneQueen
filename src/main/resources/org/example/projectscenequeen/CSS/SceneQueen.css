@@ -16,5 +16,7 @@
 }
 .label {
     -fx-font-size: 20;
+    -fx-font-family: Cochin;
+    -fx-text-fill: black;
 }
 

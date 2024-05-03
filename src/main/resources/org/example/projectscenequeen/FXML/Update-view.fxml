@@ -34,7 +34,7 @@
     </GridPane>
     <Pane fx:id="Stage" layoutX="367.0" layoutY="73.0" onDragDropped="#DragDrop" onDragOver="#DragOver" prefHeight="320.0" prefWidth="464.0">
         <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d7b88c" height="476.0" stroke="BLACK" strokeType="INSIDE" width="569.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d7b88c" height="476.0" stroke="BLACK" strokeType="INSIDE" width="632.0" />
         </children>
     </Pane>
 </AnchorPane>

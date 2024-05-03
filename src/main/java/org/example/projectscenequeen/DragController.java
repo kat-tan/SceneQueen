@@ -1,6 +1,5 @@
 package org.example.projectscenequeen;
 
-
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -8,12 +7,7 @@ import javafx.scene.input.*;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 
-
-
-
-
 public class DragController {
-
 
     @FXML
     private ImageView Chair;
@@ -62,7 +56,6 @@ public class DragController {
         db.setContent(cb);
         event.consume();
 
-
     }
 
 
@@ -82,10 +75,7 @@ public class DragController {
         if (event.getDragboard().hasString()|| event.getDragboard().hasImage()) {
             event.acceptTransferModes(TransferMode.ANY);
         }
-
-
     }
-
 
     @FXML
     void DragDrop(DragEvent event) {
@@ -99,12 +89,9 @@ public class DragController {
                 x = mouseEvent.getSceneX() - lights.getCenterX();
                 y = mouseEvent.getSceneY() - lights.getCenterY();
             });
-
-
             lights.setOnMouseDragged(mouseEvent -> {
                 double newX = mouseEvent.getSceneX() - x;
                 double newY = mouseEvent.getSceneY() - y;
-
 
                 // Keep the circle within the bounds of the Pane
                 if (newX >= 0 && newX <= Stage.getWidth() && newY >= 0 && newY <= Stage.getHeight()) {
@@ -112,8 +99,6 @@ public class DragController {
                     lights.setCenterY(newY);
                 }
             });
-
-
         } else if (event.getDragboard().hasImage()){
             Image image = event.getDragboard().getImage();
             ImageView imageView = new ImageView(image);

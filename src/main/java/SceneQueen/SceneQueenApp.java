@@ -38,7 +38,7 @@ public class SceneQueenApp extends Application {
         stage.show();
     }
 
-    static void setRoot(String fxml) throws IOException {
+    public static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
         scene.getWindow().sizeToScene();
         scene.getWindow().centerOnScreen();

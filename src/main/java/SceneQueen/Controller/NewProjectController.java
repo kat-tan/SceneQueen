@@ -33,7 +33,7 @@ public class NewProjectController {
     protected void initialize() throws IOException {
         projectNameTextField.setText("New Project");
         projectName = "New Project";
-        UserProject newProject = new UserProject("email", projectName, Collections.emptyList());
+        SceneQueen.UserProject newProject = new SceneQueen.UserProject("email", projectName, Collections.emptyList());
 
         Firestore firestore = SceneQueenApp.getFirestore();
         DocumentReference docRef = firestore.collection("users").document(UUID.randomUUID().toString());

@@ -15,4 +15,5 @@ module org.example.projectscenequeen {
 
     opens SceneQueen to javafx.fxml;
     exports SceneQueen;
+
 }

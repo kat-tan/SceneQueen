@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Rectangle?>
 
 <AnchorPane prefHeight="648.0" prefWidth="1012.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.projectscenequeen.DragController">
@@ -21,16 +20,20 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
-        <Circle fx:id="lights" fill="#ffe942" onDragDetected="#dragDetect_lights" radius="60.0" stroke="BLACK" strokeType="INSIDE" />
-        <ImageView fx:id="Table" fitHeight="150.0" fitWidth="200.0" onDragDetected="#dragDetect_table" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+        <ImageView fx:id="Table" fitHeight="145.0" fitWidth="132.0" onDragDetected="#dragDetect_table" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
             <Image url="@../props/table.png" />
         </ImageView>
-        <ImageView fx:id="Chair" fitHeight="150.0" fitWidth="200.0" onDragDetected="#dragDetect_Chair" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+        <ImageView fx:id="Chair" fitHeight="141.0" fitWidth="124.0" onDragDetected="#dragDetect_Chair" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
             <Image url="@../props/chair.png" />
         </ImageView>
-        <ImageView fx:id="Sofa" fitHeight="150.0" fitWidth="200.0" onDragDetected="#dragDetect_Sofa" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <ImageView fx:id="Sofa" fitHeight="136.0" fitWidth="132.0" onDragDetected="#dragDetect_Sofa" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
             <Image url="@../props/couch.png" />
         </ImageView>
+      <ImageView fx:id="lights" fitHeight="143.0" fitWidth="129.0" onDragDetected="#dragDetect_lights" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../props/Lights.png" />
+         </image>
+      </ImageView>
     </GridPane>
     <Pane fx:id="Stage" layoutX="366.0" layoutY="76.0" onDragDropped="#DragDrop" onDragOver="#DragOver" prefHeight="320.0" prefWidth="450.0">
         <children>

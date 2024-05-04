@@ -13,7 +13,7 @@ public class DragController {
     private ImageView Chair;
 
     @FXML
-    private Circle lights;
+    private ImageView lights;
 
     @FXML
     private ImageView Sofa;
@@ -31,10 +31,9 @@ public class DragController {
     void dragDetect_lights(MouseEvent event) {
         Dragboard db = lights.startDragAndDrop(TransferMode.ANY);
         ClipboardContent cb = new ClipboardContent();
-        cb.putString(lights.getStyle());
+        cb.putImage(lights.getImage());
         db.setContent(cb);
         event.consume();
-
 
     }
 
@@ -79,27 +78,7 @@ public class DragController {
 
     @FXML
     void DragDrop(DragEvent event) {
-        if (event.getDragboard().hasString()) {
-            String str = event.getDragboard().getString();
-            // Assuming you want to change the color of the dropped circle
-            lights.setStyle(str);
-            // Assuming you want to add the circle to the Stage
-            Stage.getChildren().add(lights);
-            lights.setOnMousePressed(mouseEvent -> {
-                x = mouseEvent.getSceneX() - lights.getCenterX();
-                y = mouseEvent.getSceneY() - lights.getCenterY();
-            });
-            lights.setOnMouseDragged(mouseEvent -> {
-                double newX = mouseEvent.getSceneX() - x;
-                double newY = mouseEvent.getSceneY() - y;
-
-                // Keep the circle within the bounds of the Pane
-                if (newX >= 0 && newX <= Stage.getWidth() && newY >= 0 && newY <= Stage.getHeight()) {
-                    lights.setCenterX(newX);
-                    lights.setCenterY(newY);
-                }
-            });
-        } else if (event.getDragboard().hasImage()){
+          if (event.getDragboard().hasImage()){
             Image image = event.getDragboard().getImage();
             ImageView imageView = new ImageView(image);
             Stage.getChildren().add(imageView);

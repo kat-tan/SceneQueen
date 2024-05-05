@@ -8,6 +8,7 @@ import com.google.cloud.firestore.Query;
 import com.google.cloud.firestore.QueryDocumentSnapshot;
 import com.google.cloud.firestore.QuerySnapshot;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -35,7 +36,13 @@ public class SignInController {
         if (authenticated) {
             SceneQueenApplication.setRoot("MainPage");
         } else {
-            System.out.println("Error: Not Authenticated");// Display error message
+            System.out.println("Error: Not Authenticated");
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Login Error");
+            alert.setHeaderText("Invalid Information");
+            alert.setContentText("Email or password is incorrect.");
+            alert.showAndWait();
         }
     }
 

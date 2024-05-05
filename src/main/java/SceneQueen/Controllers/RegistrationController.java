@@ -12,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
@@ -27,6 +28,8 @@ public class RegistrationController {
     public TextField emailTextField;
     public PasswordField passwordTextField;
     public PasswordField confirmPasswordTextField;
+
+    public Alert alert = new Alert(Alert.AlertType.WARNING);
 
     @FXML
     protected void onReturnToLoginBtn() {
@@ -50,7 +53,6 @@ public class RegistrationController {
             // Display error message to User
             System.out.println("Passwords do not match.");
 
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Error");
             alert.setHeaderText("Password Error");
             alert.setContentText("Passwords do not match.");
@@ -59,8 +61,7 @@ public class RegistrationController {
             return;
         }
 
-        if (!email.matches("[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+]")) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        if (!email.matches("[a-zA-Z0-9.]+@[a-zA-Z]+.[a-zA-Z]+")) {
             alert.setTitle("Error");
             alert.setHeaderText("Email Error");
             alert.setContentText("Please enter a valid email address.");
@@ -96,6 +97,15 @@ public class RegistrationController {
                 docRef.set(data).get();
                 // User added successfully, navigate to sign in page
                 System.out.println("User added successfully");
+
+//                ImageView icon = new ImageView("@../Images/SQLogo.png");
+//                icon.setFitHeight(48);
+//                icon.setFitWidth(48);
+//                alert.setTitle("Confirmation");
+//                alert.setHeaderText("Account Confirmation");
+//                alert.setContentText("A SceneQueen account has been created!");
+//                alert.getDialogPane().setGraphic(icon);
+//                alert.showAndWait();
 
                 try {
                     SceneQueenApplication.setRoot("SignIn");

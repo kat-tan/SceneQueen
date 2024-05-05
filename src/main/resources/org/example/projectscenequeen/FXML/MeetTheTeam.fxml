@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" stylesheets="@../CSS/SceneQueen.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SceneQueen.Controllers.MeetTheTeamController">
+   <top>
+       <HBox alignment="CENTER_RIGHT" prefHeight="112.0" prefWidth="1243.0" spacing="40.0" stylesheets="@../CSS/SceneQueen.css" BorderPane.alignment="CENTER_LEFT">
+           <children>
+               <ImageView fitHeight="112.0" fitWidth="258.0" onMouseClicked="#onLogoClicked" pickOnBounds="true" preserveRatio="true" scaleX="1.1" scaleY="1.1" translateX="-626.0" HBox.hgrow="NEVER">
+               <image>
+                  <Image url="@../Images/SQLogo.png" />
+               </image>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+               </ImageView>
+               <MenuButton contentDisplay="TEXT_ONLY" mnemonicParsing="false" stylesheets="@../CSS/SceneQueen.css" text="Contact">
+                   <items>
+                       <MenuItem mnemonicParsing="false" text="Meet the Team" />
+                       <MenuItem mnemonicParsing="false" text="Item Request" />
+                   </items>
+                   <font>
+                       <Font size="30.0" />
+                   </font>
+               </MenuButton>
+               <MenuButton contentDisplay="TEXT_ONLY" mnemonicParsing="false" stylesheets="@../CSS/SceneQueen.css" text="Account">
+                   <items>
+                       <MenuItem mnemonicParsing="false" text="Profile" />
+                       <MenuItem mnemonicParsing="false" onAction="#onLogoutButton" text="Logout" />
+                   </items>
+                   <font>
+                       <Font size="30.0" />
+                   </font>
+               </MenuButton>
+           </children>
+           <BorderPane.margin>
+               <Insets left="40.0" right="40.0" />
+           </BorderPane.margin>
+       </HBox>
+   </top>
+   <right>
+      <VBox alignment="TOP_CENTER" prefHeight="648.0" prefWidth="1232.0" style="-fx-border-color: #000000; -fx-border-width: 2;" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="40.0" left="40.0" right="40.0" />
+         </BorderPane.margin>
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Meet the Team">
+               <font>
+                  <Font name="Cochin" size="30.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Text>
+            <AnchorPane prefHeight="687.0" prefWidth="1196.0" />
+         </children>
+      </VBox>
+   </right>
+</BorderPane>

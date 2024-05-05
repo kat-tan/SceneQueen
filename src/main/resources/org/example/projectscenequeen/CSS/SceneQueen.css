@@ -21,9 +21,16 @@
 }
 .tool-tip {
     -fx-background-color: #7135FF;
-    -fx-font-family: Cochin;
+    -fx-background-radius: 10px;
+
     -fx-text-fill: white;
+    -fx-font-family: Cochin;
     -fx-font-size: 20;
+
+    -fx-border-color: black;
+    -fx-border-radius: 10px;
+    -fx-border-width: 2;
+
 }
 .buttonToolTips {
     -fx-background-color: #7135FF;
@@ -34,9 +41,8 @@
     -fx-text-fill: #FFFFFF;
 }
 .text {
-    -fx-text-fill: white;
     -fx-font-family: Cochin;
-    -fx-font-size: 20;
+    -fx-font-size: 20px;
 }
 
 

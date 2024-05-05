@@ -4,6 +4,7 @@ import SceneQueen.SceneQueenApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
@@ -13,23 +14,36 @@ import java.util.List;
 public class MainPageController {
 
     @FXML
-    private AnchorPane firstToolTip, secondToolTip, thirdToolTip, fourthToolTip;
+    private AnchorPane firstToolTip, secondToolTip, thirdToolTip, fourthToolTip, fifthToolTip;
     @FXML
     private List<Node> toolTips = new ArrayList<>();
     private int currentToolTipIndex = 0;
 
     @FXML
     protected void onMeetTheTeamMenuItem() {
+        try {
+            SceneQueenApplication.setRoot("MeetTheTeam");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML
-    protected void onLogoutButton() throws IOException {
-        SceneQueenApplication.setRoot("SignIn");
+    protected void onLogoutButton() {
+        try {
+            SceneQueenApplication.setRoot("SignIn");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML
-    protected void onCreateProjectButton() throws IOException {
-        SceneQueenApplication.setRoot("NewProject");
+    protected void onCreateProjectButton() {
+        try {
+            SceneQueenApplication.setRoot("NewProject");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML
@@ -58,7 +72,6 @@ public class MainPageController {
     private void clearToolTips() {
         toolTips.forEach(tip -> {
             tip.setVisible(false);
-            tip.setStyle("-fx-background-color: #FFFFFF;");
         });
         currentToolTipIndex = 0;
     }
@@ -69,6 +82,7 @@ public class MainPageController {
         toolTips.add(secondToolTip);
         toolTips.add(thirdToolTip);
         toolTips.add(fourthToolTip);
+        toolTips.add(fifthToolTip);
 
         toolTips.forEach(tip -> {
             if (tip != null) {
@@ -77,6 +91,15 @@ public class MainPageController {
         });
         if (!toolTips.isEmpty() && toolTips.get(0) != null) {
             toolTips.get(0).setVisible(true);
+        }
+    }
+
+    @FXML
+    protected void onLogoClicked(MouseEvent mouseEvent) {
+        try {
+            SceneQueenApplication.setRoot("MainPage");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }

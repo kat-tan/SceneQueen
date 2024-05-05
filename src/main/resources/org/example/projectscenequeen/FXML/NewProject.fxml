@@ -14,14 +14,17 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" stylesheets="@../CSS/SceneQueen.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SceneQueen.Controllers.NewProjectController">
    <top>
        <HBox alignment="CENTER_RIGHT" prefHeight="112.0" prefWidth="1243.0" spacing="40.0" stylesheets="@../CSS/SceneQueen.css" BorderPane.alignment="CENTER_LEFT">
            <children>
-               <ImageView fitHeight="112.0" fitWidth="258.0" pickOnBounds="true" preserveRatio="true" scaleX="1.1" scaleY="1.1" translateX="-625.0" HBox.hgrow="NEVER">
+               <ImageView fitHeight="112.0" fitWidth="258.0" onMouseClicked="#onLogoClicked" pickOnBounds="true" preserveRatio="true" scaleX="1.1" scaleY="1.1" translateX="-626.0" HBox.hgrow="NEVER">
                <image>
                   <Image url="@../Images/SQLogo.png" />
                </image>
@@ -34,7 +37,7 @@
                </ImageView>
                <MenuButton contentDisplay="TEXT_ONLY" mnemonicParsing="false" stylesheets="@../CSS/SceneQueen.css" text="Contact">
                    <items>
-                       <MenuItem mnemonicParsing="false" text="Meet the Team" />
+                       <MenuItem mnemonicParsing="false" onAction="#onMeetTheTeamMenuItem" text="Meet the Team" />
                        <MenuItem mnemonicParsing="false" text="Item Request" />
                    </items>
                    <font>
@@ -98,27 +101,57 @@
             <Insets bottom="40.0" right="40.0" />
          </BorderPane.margin>
          <children>
-            <BorderPane prefHeight="657.0" prefWidth="880.0">
+            <BorderPane maxWidth="898.0" prefHeight="644.0" prefWidth="898.0">
                <top>
-                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
+                  <HBox prefHeight="54.0" prefWidth="866.0" spacing="20.0" BorderPane.alignment="CENTER">
                      <children>
-                        <TextField fx:id="projectNameTextField" prefHeight="36.0" prefWidth="290.0" promptText="Project Name" stylesheets="@../CSS/SceneQueen.css">
+                        <TextField fx:id="projectNameTextField" prefHeight="36.0" prefWidth="194.0" promptText="Project Name">
                            <font>
                               <Font name="Cochin" size="20.0" />
                            </font></TextField>
                         <Button mnemonicParsing="false" onAction="#onSaveProjectBtn" text="Save Project" />
+                        <TextField fx:id="projectNameTextField11" disable="true" editable="false" prefHeight="36.0" prefWidth="77.0" visible="false">
+                           <font>
+                              <Font name="Cochin" size="20.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="enterEmailTextField" prefHeight="36.0" prefWidth="278.0" promptText="Enter Email">
+                           <font>
+                              <Font name="Cochin" size="20.0" />
+                           </font>
+                        </TextField>
+                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#onVerifyBtn" text="Verify">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
                      </children>
                      <padding>
-                        <Insets left="20.0" top="20.0" />
+                        <Insets left="20.0" right="20.0" top="20.0" />
                      </padding>
                   </HBox>
                </top>
                <center>
-                  <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-border-color: black; -fx-border-width: 2; -fx-background-color: white;" BorderPane.alignment="CENTER">
+                  <StackPane prefHeight="546.0" prefWidth="829.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="547.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="2.0" width="845.0" />
+                        <VBox fx:id="vBoxRoot" alignment="CENTER" prefHeight="441.0" prefWidth="723.0" styleClass="tool-tip">
+                           <StackPane.margin>
+                              <Insets bottom="450.0" left="200.0" right="200.0" top="50.0" />
+                           </StackPane.margin>
+                           <children>
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter your account email above!" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Cochin" size="24.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </VBox>
+                     </children>
                      <BorderPane.margin>
-                        <Insets bottom="20.0" left="20.0" right="20.0" />
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                      </BorderPane.margin>
-                  </VBox>
+                  </StackPane>
                </center>
             </BorderPane>
          </children>

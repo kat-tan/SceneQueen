@@ -19,4 +19,24 @@
     -fx-font-family: Cochin;
     -fx-text-fill: black;
 }
+.tool-tip {
+    -fx-background-color: #7135FF;
+    -fx-font-family: Cochin;
+    -fx-text-fill: white;
+    -fx-font-size: 20;
+}
+.buttonToolTips {
+    -fx-background-color: #7135FF;
+    -fx-font-family: Cochin;
+    -fx-border-color: #FFFFFF;
+    -fx-border-width: 2;
+    -fx-border-radius: 50px;
+    -fx-text-fill: #FFFFFF;
+}
+.text {
+    -fx-text-fill: white;
+    -fx-font-family: Cochin;
+    -fx-font-size: 20;
+}
+
 

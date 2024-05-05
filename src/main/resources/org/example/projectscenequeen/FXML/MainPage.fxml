@@ -9,45 +9,32 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" stylesheets="@../CSS/SceneQueen.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SceneQueen.MainPageController">
+<?import javafx.scene.image.Image?>
+<?import javafx.geometry.Rectangle2D?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" stylesheets="@../CSS/SceneQueen.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SceneQueen.Controllers.MainPageController">
    <top>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0" stylesheets="@../CSS/SceneQueen.css" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER_RIGHT" prefHeight="112.0" prefWidth="1243.0" spacing="40.0" stylesheets="@../CSS/SceneQueen.css" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="112.0" fitWidth="295.0" pickOnBounds="true" preserveRatio="true" />
-            <MenuButton fx:id="aboutButton" graphicTextGap="0.0" mnemonicParsing="false" stylesheets="@../CSS/SceneQueen.css" text="About">
-               <items>
-                  <MenuItem fx:id="meetTheTeamButton" mnemonicParsing="false" onAction="#onMeetTheTeamMenuItem" text="Meet the Team" />
-               </items>
-               <font>
-                  <Font size="33.0" />
-               </font>
-            </MenuButton>
-            <MenuButton mnemonicParsing="false" stylesheets="@../CSS/SceneQueen.css" text="Services">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="Item Request" />
-               </items>
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </MenuButton>
-            <MenuButton contentDisplay="TEXT_ONLY" mnemonicParsing="false" stylesheets="@../CSS/SceneQueen.css" text="Collections">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="My Collections" />
-                  <MenuItem mnemonicParsing="false" text="Shared Collections" />
-                  <MenuItem mnemonicParsing="false" text="Public Collections" />
-               </items>
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </MenuButton>
+            <ImageView fitHeight="112.0" fitWidth="258.0" pickOnBounds="true" preserveRatio="true" scaleX="1.1" scaleY="1.1" translateX="-625.0" HBox.hgrow="NEVER">
+               <image>
+                  <Image url="@../Images/SQLogo.png" />
+               </image>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+            </ImageView>
             <MenuButton contentDisplay="TEXT_ONLY" mnemonicParsing="false" stylesheets="@../CSS/SceneQueen.css" text="Contact">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Contact the Team" />
-                  <MenuItem mnemonicParsing="false" text="Help" />
+                  <MenuItem mnemonicParsing="false" text="Meet the Team" />
+                  <MenuItem mnemonicParsing="false" text="Item Request" />
                </items>
                <font>
                   <Font size="30.0" />
@@ -56,7 +43,6 @@
             <MenuButton contentDisplay="TEXT_ONLY" mnemonicParsing="false" stylesheets="@../CSS/SceneQueen.css" text="Account">
                <items>
                   <MenuItem mnemonicParsing="false" text="Profile" />
-                  <MenuItem mnemonicParsing="false" text="Settings" />
                   <MenuItem mnemonicParsing="false" onAction="#onLogoutButton" text="Logout" />
                </items>
                <font>
@@ -65,7 +51,7 @@
             </MenuButton>
          </children>
          <BorderPane.margin>
-            <Insets left="10.0" right="10.0" />
+            <Insets left="40.0" right="40.0" />
          </BorderPane.margin>
       </HBox>
    </top>
@@ -83,25 +69,28 @@
                   <Font name="Cochin" size="20.0" />
                </font>
             </Label>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+            <StackPane prefHeight="398.0" prefWidth="272.0">
                <children>
-                  <AnchorPane fx:id="thirdToolTip" layoutX="4.0" prefHeight="224.0" prefWidth="278.0">
+                  <AnchorPane fx:id="thirdToolTip" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="67.0" prefWidth="243.0" styleClass="tool-tip" StackPane.alignment="CENTER">
                      <children>
-                        <Text layoutX="16.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Here is where all of the brackgroud optioins will appear, once you start a project. You can also pick from old projects and all other options. Make your you save your projects so you can come back to them!" textAlignment="CENTER" wrappingWidth="242.5066089630127">
-                           <font>
-                              <Font name="System Bold" size="13.0" />
-                           </font>
-                        </Text>
-                        <Button fx:id="NoThanksButton2" layoutX="14.0" layoutY="148.0" mnemonicParsing="false" onAction="#handleNoThanksButton" prefHeight="37.0" prefWidth="148.0" text="No thank you" />
-                        <Button fx:id="NextButton2" layoutX="196.0" layoutY="148.0" mnemonicParsing="false" onAction="#handleNextButton" text="Next">
+                        <Button fx:id="NoThanksButton211" layoutX="14.0" layoutY="148.0" mnemonicParsing="false" onAction="#handleNoThanksButton" prefHeight="37.0" prefWidth="77.0" styleClass="buttonToolTips" text="Close" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="18.0" />
+                        <Button fx:id="NextButton211" layoutX="196.0" layoutY="148.0" mnemonicParsing="false" onAction="#handleNextButton" styleClass="buttonToolTips" text="Next" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="18.0">
                            <font>
                               <Font name="Bookshelf Symbol 7" size="12.0" />
                            </font>
                         </Button>
+                        <Text fill="WHITE" layoutX="18.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Your recent projects will show up here!" textAlignment="CENTER" wrappingWidth="208.072265625" AnchorPane.bottomAnchor="73.0" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="17.0">
+                           <font>
+                              <Font name="Cochin" size="20.0" />
+                           </font>
+                        </Text>
                      </children>
+                     <StackPane.margin>
+                        <Insets top="-100.0" />
+                     </StackPane.margin>
                   </AnchorPane>
                </children>
-            </AnchorPane>
+            </StackPane>
          </children>
          <BorderPane.margin>
             <Insets bottom="40.0" left="40.0" right="40.0" />
@@ -122,46 +111,46 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+            <AnchorPane prefHeight="607.0" prefWidth="880.0">
                <children>
-                  <AnchorPane fx:id="firstToolTip" layoutX="14.0" layoutY="166.0" prefHeight="187.0" prefWidth="338.0" style="-fx-background-color: pink;">
+                  <AnchorPane fx:id="firstToolTip" layoutX="55.0" layoutY="353.0" prefHeight="140.0" prefWidth="301.0" styleClass="tool-tip" stylesheets="@../CSS/SceneQueen.css" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="525.0">
                      <children>
-                        <Button fx:id="NoThanksButton" layoutX="37.0" layoutY="115.0" mnemonicParsing="false" onAction="#handleNoThanksButton" text="No thank you" />
-                        <Button fx:id="NextButton" layoutX="225.0" layoutY="115.0" mnemonicParsing="false" onAction="#handleNextButton" text="Next">
+                        <Button fx:id="NoThanksButton" layoutX="18.0" layoutY="95.0" mnemonicParsing="false" onAction="#handleNoThanksButton" styleClass="buttonToolTips" stylesheets="@../CSS/SceneQueen.css" text="Close" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="18.0" />
+                        <Button fx:id="NextButton" layoutX="208.0" layoutY="95.0" mnemonicParsing="false" onAction="#handleNextButton" styleClass="buttonToolTips" text="Next" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="18.0">
                            <font>
                               <Font name="Bookshelf Symbol 7" size="12.0" />
                            </font>
                         </Button>
-                        <Text layoutX="45.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME!!  For tips press next!!!" textAlignment="CENTER" wrappingWidth="240.072265625">
+                        <Text fill="WHITE" layoutX="26.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Need help getting started? Click next for some tips!" textAlignment="CENTER" wrappingWidth="240.072265625" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="20.0">
                            <font>
                               <Font name="Caladea" size="24.0" />
                            </font>
                         </Text>
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="secondToolTip" layoutX="1.0" layoutY="-52.0" prefHeight="182.0" prefWidth="296.0">
+                  <AnchorPane fx:id="secondToolTip" layoutX="29.0" layoutY="-32.0" prefHeight="146.0" prefWidth="279.0" styleClass="tool-tip" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="572.5">
                      <children>
-                        <Button fx:id="NoThanksButton1" layoutX="14.0" layoutY="122.0" mnemonicParsing="false" onAction="#handleNoThanksButton" prefHeight="44.0" prefWidth="156.0" text="No thank you" />
-                        <Text layoutX="14.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Here You can create a new project or continue an old one!!" wrappingWidth="249.4227294921875">
+                        <Button fx:id="NoThanksButton1" layoutX="14.0" layoutY="122.0" mnemonicParsing="false" onAction="#handleNoThanksButton" prefHeight="44.0" prefWidth="77.0" styleClass="buttonToolTips" text="Close" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="18.0" />
+                        <Text fill="WHITE" layoutX="16.0" layoutY="36.94000053405762" strokeType="OUTSIDE" strokeWidth="0.0" text="Start a new design project or continue an exisiting project." textAlignment="CENTER" wrappingWidth="249.4227294921875" AnchorPane.bottomAnchor="81.11999893188477" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="13.5772705078125" AnchorPane.topAnchor="19.0">
                            <font>
-                              <Font name="System Bold" size="18.0" />
+                              <Font name="Cochin" size="20.0" />
                            </font>
                         </Text>
-                        <Button fx:id="NextButton1" layoutX="195.0" layoutY="122.0" mnemonicParsing="false" onAction="#handleNextButton" text="Next">
+                        <Button fx:id="NextButton1" layoutX="195.0" layoutY="122.0" mnemonicParsing="false" onAction="#handleNextButton" prefWidth="73.0" styleClass="buttonToolTips" text="Next" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="18.0">
                            <font>
                               <Font name="Bookshelf Symbol 7" size="12.0" />
                            </font>
                         </Button>
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="fourthToolTip" layoutX="378.0" prefHeight="200.0" prefWidth="324.0">
+                  <AnchorPane fx:id="fourthToolTip" layoutX="527.0" layoutY="21.0" maxHeight="136.0" prefHeight="133.0" prefWidth="275.0" styleClass="tool-tip" stylesheets="@../CSS/SceneQueen.css" AnchorPane.leftAnchor="527.0">
                      <children>
-                        <Text layoutX="7.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Here you project will pop out, you can also drap different shapes into the screen. And change the lighting and backgrouond !" wrappingWidth="323.82275390625">
+                        <Text fill="WHITE" layoutX="23.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="buttonToolTips" text="For any questions or requests, contact the team here." textAlignment="CENTER" wrappingWidth="254.055908203125" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="15.0">
                            <font>
-                              <Font name="System Bold" size="18.0" />
+                              <Font name="Cochin" size="20.0" />
                            </font>
                         </Text>
-                        <Button fx:id="NoThanksButton3" layoutX="14.0" layoutY="142.0" mnemonicParsing="false" onAction="#handleNoThanksButton" prefHeight="44.0" prefWidth="193.0" text="No thank you!" />
+                        <Button fx:id="NoThanksButton3" layoutX="14.0" layoutY="78.0" mnemonicParsing="false" onAction="#handleNoThanksButton" prefHeight="44.0" prefWidth="77.0" styleClass="buttonToolTips" text="Close" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="18.0" />
                      </children>
                   </AnchorPane>
                </children>

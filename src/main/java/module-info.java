@@ -15,5 +15,9 @@ module org.example.projectscenequeen {
 
     opens SceneQueen to javafx.fxml;
     exports SceneQueen;
+    exports SceneQueen.Controllers;
+    opens SceneQueen.Controllers to javafx.fxml;
+    exports SceneQueen.Models;
+    opens SceneQueen.Models to javafx.fxml;
 
 }

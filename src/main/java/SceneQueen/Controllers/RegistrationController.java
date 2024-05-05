@@ -1,5 +1,7 @@
-package SceneQueen;
+package SceneQueen.Controllers;
 
+import SceneQueen.Encryptor;
+import SceneQueen.SceneQueenApplication;
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.Firestore;
@@ -29,7 +31,7 @@ public class RegistrationController {
     @FXML
     protected void onReturnToLoginBtn() {
         try {
-            SceneQueenApp.setRoot("SignIn");
+            SceneQueenApplication.setRoot("SignIn");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -42,6 +44,7 @@ public class RegistrationController {
         String email = emailTextField.getText();
         String password = passwordTextField.getText();
         String confirmPassword = confirmPasswordTextField.getText();
+        UserRecord userRecord;
 
         if (!password.equals(confirmPassword)) {
             // Display error message to User
@@ -56,25 +59,31 @@ public class RegistrationController {
             return;
         }
 
-        Map<String, Object> data = new HashMap<>();
-        // Hash the password
-        String hashedPassword = Encryptor.encryptPassword(password);
-        data.put("firstName", firstName);
-        data.put("lastName", lastName);
-        data.put("email", email);
-        data.put("password", hashedPassword);
-
-        Firestore firestore = SceneQueenApp.getFirestore();
-        DocumentReference docRef = firestore.collection("users").document(UUID.randomUUID().toString());
-
-        UserRecord userRecord;
+        if (!email.matches("[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+]")) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Error");
+            alert.setHeaderText("Email Error");
+            alert.setContentText("Please enter a valid email address.");
+            alert.showAndWait();
+        }
 
         try {
+            Map<String, Object> data = new HashMap<>();
+            // Hash the password
+            String hashedPassword = Encryptor.encryptPassword(password);
+            data.put("firstName", firstName);
+            data.put("lastName", lastName);
+            data.put("email", email);
+            data.put("password", hashedPassword);
+
+            Firestore firestore = SceneQueenApplication.getFirestore();
+            DocumentReference docRef = firestore.collection("users").document(email);
+
             UserRecord.CreateRequest request = new UserRecord.CreateRequest()
                     .setEmail(email)
                     .setEmailVerified(true);
 
-            userRecord = SceneQueenApp.fauth.createUser(request);
+            userRecord = SceneQueenApplication.fauth.createUser(request);
             System.out.println("Email authenticated.");
 
             // Check if user already exists
@@ -87,10 +96,11 @@ public class RegistrationController {
                 docRef.set(data).get();
                 // User added successfully, navigate to sign in page
                 System.out.println("User added successfully");
+
                 try {
-                    SceneQueenApp.setRoot("SignIn");
+                    SceneQueenApplication.setRoot("SignIn");
                 } catch (IOException e) {
-                    throw new RuntimeException(e);
+                    System.out.println("Error");
                 }
             }
         } catch (InterruptedException | ExecutionException e) {

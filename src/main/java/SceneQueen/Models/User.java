@@ -1,4 +1,4 @@
-package SceneQueen;
+package SceneQueen.Models;
 
 public class User {
     private String email;

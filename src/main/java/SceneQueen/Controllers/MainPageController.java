@@ -1,5 +1,6 @@
-package SceneQueen;
+package SceneQueen.Controllers;
 
+import SceneQueen.SceneQueenApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -23,12 +24,12 @@ public class MainPageController {
 
     @FXML
     protected void onLogoutButton() throws IOException {
-        SceneQueenApp.setRoot("SignIn");
+        SceneQueenApplication.setRoot("SignIn");
     }
 
     @FXML
     protected void onCreateProjectButton() throws IOException {
-        SceneQueenApp.setRoot("NewProject");
+        SceneQueenApplication.setRoot("NewProject");
     }
 
     @FXML
@@ -46,7 +47,6 @@ public class MainPageController {
             currentToolTipIndex++;
             currentToolTip = toolTips.get(currentToolTipIndex);
             currentToolTip.setVisible(true);
-            currentToolTip.setStyle("-fx-background-color: pink;");
         }
     }
 
@@ -77,7 +77,6 @@ public class MainPageController {
         });
         if (!toolTips.isEmpty() && toolTips.get(0) != null) {
             toolTips.get(0).setVisible(true);
-            toolTips.get(0).setStyle("-fx-background-color: pink;");
         }
     }
 }

@@ -1,18 +1,20 @@
-package SceneQueen;
+package SceneQueen.Controllers;
 
+import SceneQueen.Models.Project;
+import SceneQueen.SceneQueenApplication;
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.Firestore;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
-import java.util.Collections;
 import java.util.UUID;
 
 public class NewProjectController {
     @FXML
     protected TextField projectNameTextField;
-
+    @FXML
+    protected TextField email;
     private String projectName;
 
     @FXML
@@ -26,16 +28,16 @@ public class NewProjectController {
 
     @FXML
     protected void onLogoutButton() throws IOException {
-        SceneQueenApp.setRoot("SignIn");
+        SceneQueenApplication.setRoot("SignIn");
     }
 
     @FXML
     protected void initialize() throws IOException {
         projectNameTextField.setText("New Project");
         projectName = "New Project";
-        SceneQueen.UserProject newProject = new SceneQueen.UserProject("email", projectName, Collections.emptyList());
+        Project newProject = new Project("email", projectName);
 
-        Firestore firestore = SceneQueenApp.getFirestore();
+        Firestore firestore = SceneQueenApplication.getFirestore();
         DocumentReference docRef = firestore.collection("users").document(UUID.randomUUID().toString());
     }
 }

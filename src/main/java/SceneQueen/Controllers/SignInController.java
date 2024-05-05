@@ -1,5 +1,7 @@
-package SceneQueen;
+package SceneQueen.Controllers;
 
+import SceneQueen.Encryptor;
+import SceneQueen.SceneQueenApplication;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.CollectionReference;
 import com.google.cloud.firestore.Query;
@@ -9,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.util.List;
@@ -19,6 +22,8 @@ public class SignInController {
     private TextField emailTextField;
     @FXML
     private PasswordField passwordField;
+    @FXML
+    protected VBox vBoxRoot;
 
     @FXML
     protected void onSubmitButton() throws IOException {
@@ -28,14 +33,14 @@ public class SignInController {
         boolean authenticated = authenticateUser(email, password);
 
         if (authenticated) {
-            SceneQueenApp.setRoot("MainPage");
+            SceneQueenApplication.setRoot("MainPage");
         } else {
             System.out.println("Error: Not Authenticated");// Display error message
         }
     }
 
     private boolean authenticateUser(String email, String password) {
-        CollectionReference users = SceneQueenApp.fstore.collection("users");
+        CollectionReference users = SceneQueenApplication.fstore.collection("users");
         String hashedPassword = Encryptor.encryptPassword(password);
 
         Query query = users.whereEqualTo("email", email).whereEqualTo("password", hashedPassword);
@@ -53,7 +58,7 @@ public class SignInController {
 
     @FXML
     protected void forgotPasswordPrompt(MouseEvent mouseEvent) {
-        // I think we should get rid of this
+        // Future implementation
     }
 
     @FXML
@@ -63,9 +68,10 @@ public class SignInController {
 
     @FXML
     protected void onSignUpHerePrompt(MouseEvent mouseEvent) throws IOException {
-        SceneQueenApp.setRoot("Registration");
+        SceneQueenApplication.setRoot("Registration");
     }
 
+    @FXML
     protected void initialize() {
 
     }

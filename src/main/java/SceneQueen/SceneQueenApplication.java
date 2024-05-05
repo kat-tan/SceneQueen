@@ -16,7 +16,7 @@ import com.google.firebase.cloud.FirestoreClient;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-public class SceneQueenApp extends Application {
+public class SceneQueenApplication extends Application {
     public static Scene scene;
     public static Firestore fstore;
     public static FirebaseAuth fauth;
@@ -35,6 +35,7 @@ public class SceneQueenApp extends Application {
 
         scene = new Scene(loadFXML("SignIn"));
         stage.setScene(scene);
+        stage.sizeToScene();
         stage.show();
     }
 
@@ -45,7 +46,7 @@ public class SceneQueenApp extends Application {
     }
 
     public static Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(SceneQueenApp.class.getResource(
+        FXMLLoader fxmlLoader = new FXMLLoader(SceneQueenApplication.class.getResource(
                 "/org/example/projectscenequeen/FXML/" + fxml + ".fxml")
         );
         return fxmlLoader.load();

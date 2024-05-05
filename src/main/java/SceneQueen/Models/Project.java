@@ -1,16 +1,15 @@
-package SceneQueen;
+package SceneQueen.Models;
 
 import java.util.List;
 
-public class UserProject {
+public class Project {
     private String email;
     private String projectName;
-    private List<Element> elementList;
+    private ProjectStage project;
 
-    public UserProject(String email, String projectName, List<Element> elementList) {
+    public Project(String email, String projectName) {
         this.email = email;
         this.projectName = projectName;
-        this.elementList = elementList;
     }
 
     public String getEmail() {
@@ -29,11 +28,4 @@ public class UserProject {
         this.projectName = projectName;
     }
 
-    public List<Element> getElementList() {
-        return elementList;
-    }
-
-    public void setElementList(List<Element> elementList) {
-        this.elementList = elementList;
-    }
 }

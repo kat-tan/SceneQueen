@@ -25,7 +25,6 @@ Stage Grid (for accurate measurements)
 Library sidebar/menu
 Modify color and name of element
 Save/Load button
-Collaboration option/ real time editing with others (if time allows)
 
 Program and Hardware:
 Java, JavaFX, SceneBuilder

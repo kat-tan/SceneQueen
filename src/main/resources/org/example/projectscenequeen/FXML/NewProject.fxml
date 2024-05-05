@@ -148,6 +148,7 @@
                            </children>
                         </VBox>
                      </children>
+                      <fx:include source="DragDrop.fxml"/>
                      <BorderPane.margin>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                      </BorderPane.margin>
@@ -158,3 +159,4 @@
       </VBox>
    </right>
 </BorderPane>
+

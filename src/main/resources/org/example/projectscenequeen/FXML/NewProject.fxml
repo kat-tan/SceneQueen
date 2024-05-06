@@ -157,6 +157,9 @@
                      <StackPane.margin>
                         <Insets left="20.0" right="20.0" />
                      </StackPane.margin>
+                     <children>
+                        <ImageView fitHeight="62.0" fitWidth="81.0" layoutX="736.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
                   </Pane>
                   <VBox fx:id="alertVBox" alignment="CENTER" fillWidth="false" prefHeight="322.0" prefWidth="687.0" styleClass="tool-tip" StackPane.alignment="CENTER">
                      <StackPane.margin>

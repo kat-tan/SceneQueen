@@ -135,8 +135,8 @@ public class NewProjectController {
 
     @FXML
     protected void initialize() {
-        projectNameTextField.setText("New Project");
-        projectName = "New Project";
+        projectNameTextField.setText("My Project");
+        projectName = "My Project";
         Project newProject = new Project("email", projectName);
 
     }

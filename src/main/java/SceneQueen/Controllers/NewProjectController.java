@@ -34,6 +34,9 @@ public class NewProjectController {
     private ImageView couch;
     @FXML
     private ImageView plant;
+    @FXML
+    private ImageView bed;
+
 
     private String projectName;
     private String email;

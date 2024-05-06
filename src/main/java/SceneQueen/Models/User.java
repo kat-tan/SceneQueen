@@ -12,6 +12,8 @@ public class User {
         this.lastName = lastName;
     }
 
+    public User() { }
+
     public String getEmail() {
         return email;
     }
@@ -42,6 +44,11 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    // Only used for TEST class
+    public String getFullName() {
+        return firstName + " " + lastName;
     }
 }
 

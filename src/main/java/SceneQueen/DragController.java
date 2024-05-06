@@ -51,7 +51,7 @@ public class DragController {
     }
 
     @FXML
-    protected void dragDetect_Couch(MouseEvent event) {
+    protected void dragDetect_Sofa(MouseEvent event) {
         Dragboard db = couch.startDragAndDrop(TransferMode.ANY);
         ClipboardContent cb = new ClipboardContent();
         cb.putImage(couch.getImage());

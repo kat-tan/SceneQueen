@@ -38,6 +38,7 @@ public class ContinueProjectController {
     private String email;
     private double xStageVal;
     private double yStageVal;
+    private ImageView lastClickedImageView = null;
 
     @FXML
     protected void onDragDetected(MouseEvent mouseEvent) {
@@ -85,6 +86,14 @@ public class ContinueProjectController {
             dragEvent.setDropCompleted(true);
         }
 
+    }
+
+    @FXML
+    protected void onDeleteButton() {
+        if (lastClickedImageView != null) {
+            stagePane.getChildren().remove(lastClickedImageView);
+            lastClickedImageView = null;
+        }
     }
 
     @FXML

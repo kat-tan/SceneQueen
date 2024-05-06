@@ -71,5 +71,14 @@
     -fx-border-radius: 50px;
     -fx-text-fill: black;
 }
+.button-delete {
+    -fx-background-color: #FFB0B8;
+    -fx-background-radius: 50px;
+    -fx-font-family: Cochin;
+    -fx-border-color: black;
+    -fx-border-width: 2;
+    -fx-border-radius: 50px;
+    -fx-text-fill: black;
+}
 
 

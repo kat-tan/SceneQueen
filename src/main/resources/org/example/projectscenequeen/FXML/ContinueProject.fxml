@@ -160,6 +160,7 @@
                      </StackPane.margin>
                      <children>
                         <ImageView fitHeight="62.0" fitWidth="81.0" layoutX="736.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" />
+                        <Button fx:id="deleteButton" layoutX="18.0" layoutY="460.0" mnemonicParsing="false" onAction="#onDeleteButton" styleClass="button-delete" text="Delete Element" />
                      </children>
                   </Pane>
                </children>

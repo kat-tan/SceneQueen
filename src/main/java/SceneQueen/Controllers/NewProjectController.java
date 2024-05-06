@@ -5,6 +5,7 @@ import SceneQueen.SceneQueenApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -41,8 +42,6 @@ public class NewProjectController {
     private ImageView plant;
     @FXML
     private ImageView bed;
-
-
     @FXML
     private VBox firstToolTip, secondToolTip, thirdToolTip, fourthToolTip, fifthToolTip;
 
@@ -52,13 +51,14 @@ public class NewProjectController {
     private String email;
     private double xStageVal;
     private double yStageVal;
+    private ImageView lastClickedImageView = null;
 
     @FXML
     protected void onDragDetected(MouseEvent mouseEvent) {
         ImageView element = (ImageView)mouseEvent.getSource();
-
         Dragboard db = element.startDragAndDrop(TransferMode.ANY);
         ClipboardContent cb = new ClipboardContent();
+
         cb.putImage(element.getImage());
         db.setContent(cb);
         mouseEvent.consume();
@@ -76,6 +76,7 @@ public class NewProjectController {
         if (dragEvent.getDragboard().hasImage()){
             Image image = dragEvent.getDragboard().getImage();
             ImageView imageView = new ImageView(image);
+            imageView.setOnMouseClicked(lastCLick -> lastClickedImageView = imageView);
             stagePane.getChildren().add(imageView);
 
             // Update position of the image during dragging
@@ -106,6 +107,14 @@ public class NewProjectController {
             dragEvent.setDropCompleted(true);
         }
 
+    }
+
+    @FXML
+    protected void onDeleteButton() {
+        if (lastClickedImageView != null) {
+            stagePane.getChildren().remove(lastClickedImageView);
+            lastClickedImageView = null;
+        }
     }
 
     @FXML
@@ -189,6 +198,7 @@ public class NewProjectController {
         toolTips.add(firstToolTip);
         toolTips.add(secondToolTip);
         toolTips.add(thirdToolTip);
+        toolTips.add(fourthToolTip);
 
         toolTips.forEach(tip -> {
             if (tip != null) {

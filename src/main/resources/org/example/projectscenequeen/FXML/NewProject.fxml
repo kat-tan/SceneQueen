@@ -209,20 +209,55 @@
                               <Insets top="10.0" />
                            </padding>
                         </VBox>
-                        <VBox fx:id="thirdToolTip" alignment="CENTER" layoutX="24.0" layoutY="187.0" prefHeight="150.0" prefWidth="305.0" styleClass="tool-tip-new-project">
+                        <VBox fx:id="thirdToolTip" alignment="CENTER" layoutX="24.0" layoutY="101.0" prefHeight="106.0" prefWidth="301.0" styleClass="tool-tip-new-project">
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Drag and drop any object to the stage! Click on an object and a delete option will pop up." textAlignment="CENTER" wrappingWidth="269.9151916503906">
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Drag and drop any object to the stage!" textAlignment="CENTER" wrappingWidth="263.0841369628906">
                                  <font>
                                     <Font size="20.0" />
                                  </font>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
                               </Text>
-                              <HBox alignment="CENTER" prefHeight="31.0" prefWidth="301.0" spacing="105.0">
-                                 <children>
-                                    <Button mnemonicParsing="false" onAction="#onCloseBtn" styleClass="button-tool-tip-new-project" text="Got It!" />
-                                 </children>
+                              <HBox alignment="CENTER" prefHeight="45.0" prefWidth="306.0" spacing="105.0">
                                  <VBox.margin>
                                     <Insets top="9.0" />
                                  </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="70.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#onCloseBtn" styleClass="button-tool-tip-new-project" text="Close" />
+                                    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onNextBtn" styleClass="button-tool-tip-new-project" text="Next" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <Button fx:id="deleteButton" layoutX="18.0" layoutY="460.0" mnemonicParsing="false" onAction="#onDeleteButton" styleClass="button-delete" text="Delete Element" />
+                        <VBox fx:id="fourthToolTip" alignment="CENTER" layoutX="35.0" layoutY="296.0" prefHeight="137.0" prefWidth="291.0" styleClass="tool-tip-new-project">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Click on an object and then the &quot;Delete Element&quot; button to remove the item." textAlignment="CENTER" wrappingWidth="280.1617126464844">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <HBox alignment="CENTER" prefHeight="45.0" prefWidth="306.0" spacing="105.0">
+                                 <VBox.margin>
+                                    <Insets top="9.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="70.0">
+                                 <children>
+                                    <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onCloseBtn" styleClass="button-tool-tip-new-project" text="Got it!" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" />
+                                 </padding>
                               </HBox>
                            </children>
                         </VBox>

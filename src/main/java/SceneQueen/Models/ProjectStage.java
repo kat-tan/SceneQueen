@@ -46,6 +46,4 @@ public class ProjectStage {
     public void setElements(ArrayList<Element> elements) {
         this.elements = elements;
     }
-
-
 }

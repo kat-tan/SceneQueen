@@ -94,7 +94,5 @@ public class DragController {
 
             event.setDropCompleted(true);
         }
-
     }
-
 }

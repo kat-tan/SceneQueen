@@ -1,7 +1,11 @@
 package SceneQueen.Controllers;
 
+import SceneQueen.Models.Element;
 import SceneQueen.Models.Project;
 import SceneQueen.SceneQueenApplication;
+import com.google.cloud.firestore.CollectionReference;
+import com.google.cloud.firestore.DocumentReference;
+import com.google.cloud.firestore.Firestore;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -9,19 +13,21 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.*;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.scene.shape.Rectangle;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class NewProjectController {
+    public Project newProject;
     @FXML
-    private TextField projectNameTextField;
+    TextField projectNameTextField;
     @FXML
-    private TextField enterEmailTextField;
+    TextField enterEmailTextField;
     @FXML
-    private VBox alertVBox;
+    VBox alertVBox;
     @FXML
     private Pane stagePane;
     @FXML
@@ -35,8 +41,9 @@ public class NewProjectController {
     @FXML
     private ImageView plant;
 
-    private String projectName;
-    private String email;
+    String projectName;
+    private Project project;
+    static String email;
     private double xStageVal;
     private double yStageVal;
 
@@ -90,16 +97,40 @@ public class NewProjectController {
 
     @FXML
     protected void onSaveProjectBtn() {
-        projectName = projectNameTextField.getText();
+        String email = enterEmailTextField.getText();
+        String projectName = projectNameTextField.getText();
+        project = new Project(email, projectName);
+
+//        Map<String, Object> projectInfo = new HashMap<>();
+//        projectInfo.put("projectName", projectName);
+
+        saveProjectToFirebase(project, email);
+    }
+
+    private void saveProjectToFirebase(Project project, String email) {
+        Firestore firestore = SceneQueenApplication.getFirestore();
+        DocumentReference userRef = firestore.collection("users").document(email);
+        CollectionReference projectsRef = userRef.collection("projects");
 
         Map<String, Object> projectInfo = new HashMap<>();
+        projectInfo.put("email", project.getEmail());
+        projectInfo.put("projectName", project.getProjectName());
 
-        projectInfo.put("projectName", projectName);
+        List<Map<String, Object>> elementsInfo = new ArrayList<>();
+        for (Element element : project.getElements()) {
+            Map<String, Object> elementInfo = new HashMap<>();
+            elementInfo.put("elementName", element.getElementName());
+            elementInfo.put("xPosition", element.getxPosition());
+            elementInfo.put("yPosition", element.getyPosition());
+            elementsInfo.add(elementInfo);
+        }
+        projectInfo.put("elements", elementsInfo);
 
+        projectsRef.add(projectInfo);
     }
 
     @FXML
-    protected void onVerifyBtn() {
+    public void onVerifyBtn() {
         email = enterEmailTextField.getText();
 
         // check if email is in db
@@ -139,6 +170,10 @@ public class NewProjectController {
         projectName = "My Project";
         Project newProject = new Project("email", projectName);
 
+    }
+
+    public static String getCurrentUserEmail() {
+        return email;
     }
 
 }

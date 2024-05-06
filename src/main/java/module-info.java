@@ -1,5 +1,6 @@
 module org.example.projectscenequeen {
     requires javafx.controls;
+    requires javafx.base;
     requires javafx.fxml;
 
     requires org.controlsfx.controls;

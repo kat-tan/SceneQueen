@@ -42,4 +42,6 @@ class StageTest {
         stage.setElements(elements);
         assertEquals(2, stage.getElements().size());
     }
+
+
 }

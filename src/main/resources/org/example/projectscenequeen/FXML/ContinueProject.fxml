@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" stylesheets="@../CSS/SceneQueen.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SceneQueen.Controllers.ContinueProjectController">
+   <top>
+       <HBox alignment="CENTER_RIGHT" prefHeight="112.0" prefWidth="1243.0" spacing="40.0" stylesheets="@../CSS/SceneQueen.css" BorderPane.alignment="CENTER_LEFT">
+           <children>
+               <ImageView fitHeight="112.0" fitWidth="258.0" onMouseClicked="#onLogoClicked" pickOnBounds="true" preserveRatio="true" scaleX="1.1" scaleY="1.1" translateX="-626.0" HBox.hgrow="NEVER">
+               <image>
+                  <Image url="@../Images/SQLogo.png" />
+               </image>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+               </ImageView>
+               <MenuButton contentDisplay="TEXT_ONLY" mnemonicParsing="false" stylesheets="@../CSS/SceneQueen.css" text="Contact">
+                   <items>
+                       <MenuItem mnemonicParsing="false" onAction="#onMeetTheTeamMenuItem" text="Meet the Team" />
+                       <MenuItem mnemonicParsing="false" text="Item Request" />
+                   </items>
+                   <font>
+                       <Font size="30.0" />
+                   </font>
+               </MenuButton>
+               <MenuButton contentDisplay="TEXT_ONLY" mnemonicParsing="false" stylesheets="@../CSS/SceneQueen.css" text="Account">
+                   <items>
+                       <MenuItem mnemonicParsing="false" text="Profile" />
+                       <MenuItem mnemonicParsing="false" onAction="#onLogoutButton" text="Logout" />
+                   </items>
+                   <font>
+                       <Font size="30.0" />
+                   </font>
+               </MenuButton>
+           </children>
+           <BorderPane.margin>
+               <Insets left="40.0" right="40.0" />
+           </BorderPane.margin>
+       </HBox>
+   </top>
+   <center>
+      <VBox alignment="TOP_CENTER" prefHeight="648.0" prefWidth="369.0" style="-fx-border-color: #000000; -fx-border-width: 2;" stylesheets="@../CSS/SceneQueen.css" BorderPane.alignment="BOTTOM_CENTER">
+         <BorderPane.margin>
+            <Insets bottom="40.0" left="40.0" right="40.0" />
+         </BorderPane.margin>
+         <children>
+            <Label text="Elements">
+               <VBox.margin>
+                  <Insets bottom="20.0" top="20.0" />
+               </VBox.margin>
+            </Label>
+            <GridPane alignment="BOTTOM_CENTER" gridLinesVisible="true" prefHeight="608.0" prefWidth="282.0" style="-fx-hgap: 1; -fx-vgap: 1;" VBox.vgrow="NEVER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="136.0" minWidth="10.0" prefWidth="136.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="136.0" minWidth="10.0" prefWidth="136.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <ImageView fx:id="light" fitHeight="68.0" fitWidth="81.0" onDragDetected="#onDragDetected" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                     <image>
+                        <Image url="@../Elements/light.png" />
+                     </image>
+                     <GridPane.margin>
+                        <Insets left="31.0" />
+                     </GridPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="couch" fitHeight="82.0" fitWidth="132.0" onDragDetected="#onDragDetected" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+                     <image>
+                        <Image url="@../Elements/couch.png" />
+                     </image>
+                     <GridPane.margin>
+                        <Insets left="19.0" />
+                     </GridPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="chair" fitHeight="84.0" fitWidth="134.0" onDragDetected="#onDragDetected" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <image>
+                        <Image url="@../Elements/chair.png" />
+                     </image>
+                     <GridPane.margin>
+                        <Insets left="19.0" />
+                     </GridPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="table" fitHeight="97.0" fitWidth="121.0" onDragDetected="#onDragDetected" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Elements/table.png" />
+                     </image>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </ImageView>
+                  <ImageView fx:id="plant" fitHeight="74.0" fitWidth="85.0" onDragDetected="#onDragDetected" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+                     <image>
+                        <Image url="@../Elements/plant.png" />
+                     </image>
+                     <GridPane.margin>
+                        <Insets left="23.0" />
+                     </GridPane.margin>
+                  </ImageView>
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+   </center>
+   <right>
+      <VBox prefHeight="648.0" prefWidth="888.5" style="-fx-border-color: black; -fx-border-width: 2;" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="40.0" right="40.0" />
+         </BorderPane.margin>
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <TextField fx:id="projectNameTextField" promptText="Project Name" styleClass="text-field-new-project" />
+                  <Button mnemonicParsing="false" onAction="#onSearchProjectBtn" prefHeight="43.0" prefWidth="202.0" styleClass="text-field-new-project" text="Search for Project" />
+                  <TextField fx:id="enterEmailTextField" prefHeight="43.0" prefWidth="194.0" promptText="Enter Email" styleClass="text-field-new-project">
+                     <HBox.margin>
+                        <Insets left="46.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onVerifyBtn" prefHeight="43.0" prefWidth="83.0" styleClass="text-field-new-project" text="Verify" />
+               </children>
+               <padding>
+                  <Insets left="20.0" right="10.0" top="20.0" />
+               </padding>
+            </HBox>
+            <StackPane prefHeight="518.0" prefWidth="860.0">
+               <children>
+                  <Pane fx:id="stagePane" onDragDropped="#onDragDrop" onDragOver="#onDragOver" prefHeight="492.0" prefWidth="845.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 2;">
+                     <StackPane.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </StackPane.margin>
+                     <children>
+                        <ImageView fitHeight="62.0" fitWidth="81.0" layoutX="736.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </Pane>
+                  <VBox fx:id="alertVBox" alignment="CENTER" fillWidth="false" prefHeight="322.0" prefWidth="687.0" styleClass="tool-tip" StackPane.alignment="CENTER">
+                     <StackPane.margin>
+                        <Insets bottom="375.0" left="150.0" right="150.0" top="70.0" />
+                     </StackPane.margin>
+                     <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter your account email above to search for Project!" textAlignment="CENTER" wrappingWidth="576.8143882751465">
+                           <font>
+                              <Font name="Cochin" size="31.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+            </StackPane>
+         </children>
+      </VBox>
+   </right>
+</BorderPane>

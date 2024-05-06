@@ -11,7 +11,13 @@ module org.example.projectscenequeen {
     requires google.cloud.firestore;
     requires google.cloud.core;
     requires com.google.api.apicommon;
+    requires com.google.common;
 
-    opens org.CSC325Capstone.projectscenequeen to javafx.fxml;
-    exports org.CSC325Capstone.projectscenequeen;
+    opens SceneQueen to javafx.fxml;
+    exports SceneQueen;
+    exports SceneQueen.Controllers;
+    opens SceneQueen.Controllers to javafx.fxml;
+    exports SceneQueen.Models;
+    opens SceneQueen.Models to javafx.fxml;
+
 }

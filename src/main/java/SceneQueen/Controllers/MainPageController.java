@@ -14,17 +14,9 @@ import java.util.List;
 public class MainPageController {
 
     @FXML
-    public AnchorPane firstToolTip;
+    private AnchorPane firstToolTip, secondToolTip, thirdToolTip, fourthToolTip, fifthToolTip;
     @FXML
-    public AnchorPane secondToolTip;
-    @FXML
-    public AnchorPane thirdToolTip;
-    @FXML
-    public AnchorPane fourthToolTip;
-    @FXML
-    private AnchorPane fifthToolTip;
-    @FXML
-    public List<Node> toolTips = new ArrayList<>();
+    private List<Node> toolTips = new ArrayList<>();
     private int currentToolTipIndex = 0;
 
     @FXML
@@ -60,7 +52,7 @@ public class MainPageController {
     }
 
     @FXML
-    public void handleNextButton(ActionEvent event) {
+    private void onNextBtn(ActionEvent event) {
         if (currentToolTipIndex < toolTips.size() - 1) {
 
             Node currentToolTip = toolTips.get(currentToolTipIndex);
@@ -73,7 +65,7 @@ public class MainPageController {
     }
 
     @FXML
-    public void handleNoThanksButton(ActionEvent event) {
+    private void onCloseBtn (ActionEvent event) {
         clearToolTips();
     }
 

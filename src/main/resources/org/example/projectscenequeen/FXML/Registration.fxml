@@ -37,17 +37,17 @@
                 <Insets left="30.0" right="30.0" top="10.0" />
             </VBox.margin>
         </Text>
-        <TextField fx:id="firstNameTextField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="36.0" prefWidth="340.0" promptText="First Name" stylesheets="@../CSS/Welcome.css">
+        <TextField fx:id="firstNameTextField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="36.0" prefWidth="340.0" promptText="First Name" stylesheets="@../CSS/SignIn.css">
             <font>
                 <Font name="Cochin" size="20.0" />
             </font>
         </TextField>
-        <TextField fx:id="lastNameTextField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="36.0" prefWidth="340.0" promptText="Last Name" stylesheets="@../CSS/Welcome.css">
+        <TextField fx:id="lastNameTextField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="36.0" prefWidth="340.0" promptText="Last Name" stylesheets="@../CSS/SignIn.css">
             <font>
                 <Font name="Cochin" size="20.0" />
             </font>
         </TextField>
-        <TextField fx:id="emailTextField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="36.0" prefWidth="340.0" promptText="Email" stylesheets="@../CSS/Welcome.css" VBox.vgrow="NEVER">
+        <TextField fx:id="emailTextField" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="36.0" prefWidth="340.0" promptText="Email" stylesheets="@../CSS/SignIn.css" VBox.vgrow="NEVER">
             <font>
                 <Font name="Cochin" size="20.0" />
             </font>
@@ -55,14 +55,14 @@
                 <Insets />
             </VBox.margin>
         </TextField>
-      <PasswordField fx:id="passwordTextField" maxWidth="340.0" promptText="Password" stylesheets="@../CSS/Welcome.css" />
-      <PasswordField fx:id="confirmPasswordTextField" maxWidth="340.0" promptText="Confirm Password" stylesheets="@../CSS/Welcome.css" />
-        <Button alignment="CENTER" contentDisplay="CENTER" ellipsisString="" graphicTextGap="2.0" mnemonicParsing="false" onAction="#onSubmitButton" prefHeight="36.0" prefWidth="109.0" stylesheets="@../CSS/Welcome.css" text="Register" textFill="#4000ff">
+      <PasswordField fx:id="passwordTextField" maxWidth="340.0" promptText="Password" stylesheets="@../CSS/SignIn.css" />
+      <PasswordField fx:id="confirmPasswordTextField" maxWidth="340.0" promptText="Confirm Password" stylesheets="@../CSS/SignIn.css" />
+        <Button alignment="CENTER" contentDisplay="CENTER" ellipsisString="" graphicTextGap="2.0" mnemonicParsing="false" onAction="#onSubmitButton" prefHeight="36.0" prefWidth="109.0" stylesheets="@../CSS/SignIn.css" text="Register" textFill="#4000ff">
             <font>
                 <Font name="Cochin" size="20.0" />
             </font>
         </Button>
-      <Button alignment="CENTER" contentDisplay="CENTER" ellipsisString="" graphicTextGap="2.0" mnemonicParsing="false" onAction="#onReturnToLoginBtn" prefHeight="38.0" prefWidth="171.0" stylesheets="@../CSS/Welcome.css" text="Return to Login">
+      <Button alignment="CENTER" contentDisplay="CENTER" ellipsisString="" graphicTextGap="2.0" mnemonicParsing="false" onAction="#onReturnToLoginBtn" prefHeight="38.0" prefWidth="171.0" stylesheets="@../CSS/SignIn.css" text="Return to Login">
          <font>
             <Font name="Cochin" size="20.0" />
          </font>

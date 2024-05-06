@@ -9,10 +9,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.*;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.scene.shape.Rectangle;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,13 +18,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class NewProjectController {
+public class ContinueProjectController {
     @FXML
     private TextField projectNameTextField;
-    @FXML
-    private TextField enterEmailTextField;
-    @FXML
-    private VBox alertVBox;
     @FXML
     private Pane stagePane;
     @FXML
@@ -40,11 +34,6 @@ public class NewProjectController {
     @FXML
     private ImageView plant;
 
-    @FXML
-    private VBox firstToolTip, secondToolTip, thirdToolTip, fourthToolTip, fifthToolTip;
-
-    private List<Node> toolTips = new ArrayList<>();
-    private int currentToolTipIndex = 0;
     private String projectName;
     private String email;
     private double xStageVal;
@@ -109,41 +98,6 @@ public class NewProjectController {
     }
 
     @FXML
-    protected void onVerifyBtn() {
-        email = enterEmailTextField.getText();
-
-        // check if email is in db
-        alertVBox.setVisible(false);
-
-    }
-
-    @FXML
-    private void onNextBtn(ActionEvent event) {
-        if (currentToolTipIndex < toolTips.size() - 1) {
-
-            Node currentToolTip = toolTips.get(currentToolTipIndex);
-            currentToolTip.setVisible(false);
-
-            currentToolTipIndex++;
-            currentToolTip = toolTips.get(currentToolTipIndex);
-            currentToolTip.setVisible(true);
-        }
-    }
-
-    @FXML
-    private void onCloseBtn (ActionEvent event) {
-        clearToolTips();
-    }
-
-    @FXML
-    private void clearToolTips() {
-        toolTips.forEach(tip -> {
-            tip.setVisible(false);
-        });
-        currentToolTipIndex = 0;
-    }
-
-    @FXML
     protected void onMeetTheTeamMenuItem() {
         try {
             SceneQueenApplication.setRoot("MeetTheTeam");
@@ -175,19 +129,6 @@ public class NewProjectController {
         projectNameTextField.setText("My Project");
         projectName = "My Project";
         Project newProject = new Project("email", projectName);
-
-        toolTips.add(firstToolTip);
-        toolTips.add(secondToolTip);
-        toolTips.add(thirdToolTip);
-
-        toolTips.forEach(tip -> {
-            if (tip != null) {
-                tip.setVisible(false);
-            }
-        });
-        if (!toolTips.isEmpty() && toolTips.get(0) != null) {
-            toolTips.get(0).setVisible(true);
-        }
 
     }
 

@@ -1,6 +1,6 @@
 package SceneQueen.Controllers;
 
-import SceneQueen.Encryptor;
+import SceneQueen.Models.Encryptor;
 import SceneQueen.SceneQueenApplication;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.CollectionReference;

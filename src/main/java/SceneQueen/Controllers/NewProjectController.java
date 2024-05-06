@@ -39,6 +39,9 @@ public class NewProjectController {
     private ImageView couch;
     @FXML
     private ImageView plant;
+    @FXML
+    private ImageView bed;
+
 
     @FXML
     private VBox firstToolTip, secondToolTip, thirdToolTip, fourthToolTip, fifthToolTip;
@@ -85,12 +88,19 @@ public class NewProjectController {
                 double newX = mouseEvent.getSceneX() - xStageVal;
                 double newY = mouseEvent.getSceneY() - yStageVal;
 
-                // Keep the image within the bounds of the Stage
-                if (newX >= 0 && newX <= stagePane.getWidth() &&
-                        newY >= 0 && newY <= stagePane.getHeight()) {
-                    imageView.setLayoutX(newX);
-                    imageView.setLayoutY(newY);
-                }
+
+                double stageMinX = 0;
+                double stageMinY = 0;
+                double stageMaxX = stagePane.getWidth() - imageView.getBoundsInParent().getWidth();
+                double stageMaxY = stagePane.getHeight() - imageView.getBoundsInParent().getHeight();
+
+
+                newX = Math.max(stageMinX, Math.min(newX, stageMaxX));
+                newY = Math.max(stageMinY, Math.min(newY, stageMaxY));
+
+
+                imageView.setLayoutX(newX);
+                imageView.setLayoutY(newY);
             });
 
             dragEvent.setDropCompleted(true);

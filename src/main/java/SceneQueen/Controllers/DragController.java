@@ -84,12 +84,19 @@ public class DragController {
                 double newX = mouseEvent.getSceneX() - x;
                 double newY = mouseEvent.getSceneY() - y;
 
-                // Keep the image within the bounds of the Stage
-                if (newX >= 0 && newX <= Stage.getWidth() &&
-                        newY >= 0 && newY <= Stage.getHeight()) {
-                    imageView.setLayoutX(newX);
-                    imageView.setLayoutY(newY);
-                }
+
+                double stageMinX = 0;
+                double stageMinY = 0;
+                double stageMaxX = Stage.getWidth() - imageView.getBoundsInParent().getWidth();
+                double stageMaxY = Stage.getHeight() - imageView.getBoundsInParent().getHeight();
+
+
+                newX = Math.max(stageMinX, Math.min(newX, stageMaxX));
+                newY = Math.max(stageMinY, Math.min(newY, stageMaxY));
+
+
+                imageView.setLayoutX(newX);
+                imageView.setLayoutY(newY);
             });
 
             event.setDropCompleted(true);

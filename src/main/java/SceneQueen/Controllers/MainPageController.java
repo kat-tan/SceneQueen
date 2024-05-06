@@ -48,7 +48,11 @@ public class MainPageController {
 
     @FXML
     protected void onContinueProjectButton() {
-
+        try {
+            SceneQueenApplication.setRoot("ContinueProject");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML

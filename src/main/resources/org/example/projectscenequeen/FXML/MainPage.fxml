@@ -76,7 +76,7 @@
                   <Font size="1253.0" />
                </font>
             </Button>
-            <Button blendMode="SRC_ATOP" mnemonicParsing="false" style="-fx-border-radius: 50px; -fx-border-width: 2; -fx-border-color: #000000; -fx-background-color: #DCCDFF;" stylesheets="@../CSS/SceneQueen.css" text="Continue a Project" />
+            <Button blendMode="SRC_ATOP" mnemonicParsing="false" onAction="#onContinueProjectButton" style="-fx-border-radius: 50px; -fx-border-width: 2; -fx-border-color: #000000; -fx-background-color: #DCCDFF;" stylesheets="@../CSS/SceneQueen.css" text="Continue a Project" />
             <Label text="My Recent Projects">
                <font>
                   <Font name="Cochin" size="20.0" />

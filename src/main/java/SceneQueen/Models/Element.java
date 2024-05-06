@@ -11,6 +11,8 @@ public class Element {
         this.yPosition = yPosition;
     }
 
+    public Element(String elementName) { } // Used for TEST
+
     public String getElementName() {
         return elementName;
     }

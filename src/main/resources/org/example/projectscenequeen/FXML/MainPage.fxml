@@ -38,7 +38,7 @@
                         <Font name="Cochin" size="20.0" />
                      </font>
                   </Text>
-                  <Button layoutX="202.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleNextButton" prefHeight="44.0" prefWidth="86.0" styleClass="buttonToolTips" text="Next" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="265.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="17.0" />
+                  <Button layoutX="202.0" layoutY="20.0" mnemonicParsing="false" onAction="#onNextBtn" prefHeight="44.0" prefWidth="86.0" styleClass="button-tool-tip" text="Next" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="265.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="17.0" />
                </children>
                <HBox.margin>
                   <Insets bottom="15.0" top="15.0" />
@@ -86,8 +86,8 @@
                <children>
                   <AnchorPane fx:id="fourthToolTip" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="67.0" prefWidth="243.0" styleClass="tool-tip" StackPane.alignment="CENTER">
                      <children>
-                        <Button fx:id="NoThanksButton211" layoutX="14.0" layoutY="148.0" mnemonicParsing="false" onAction="#handleNoThanksButton" prefHeight="37.0" prefWidth="77.0" styleClass="buttonToolTips" text="Close" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="18.0" />
-                        <Button fx:id="NextButton211" layoutX="196.0" layoutY="148.0" mnemonicParsing="false" onAction="#handleNextButton" styleClass="buttonToolTips" text="Next" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="18.0">
+                        <Button fx:id="NoThanksButton211" layoutX="14.0" layoutY="148.0" mnemonicParsing="false" onAction="#onCloseBtn" prefHeight="37.0" prefWidth="77.0" styleClass="button-tool-tip" text="Close" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="18.0" />
+                        <Button fx:id="NextButton211" layoutX="196.0" layoutY="148.0" mnemonicParsing="false" onAction="#onNextBtn" styleClass="button-tool-tip" text="Next" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="18.0">
                            <font>
                               <Font name="Bookshelf Symbol 7" size="12.0" />
                            </font>
@@ -128,8 +128,8 @@
                <children>
                   <AnchorPane fx:id="firstToolTip" layoutX="55.0" layoutY="353.0" prefHeight="140.0" prefWidth="301.0" styleClass="tool-tip" stylesheets="@../CSS/SceneQueen.css" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="525.0">
                      <children>
-                        <Button fx:id="NoThanksButton" layoutX="18.0" layoutY="95.0" mnemonicParsing="false" onAction="#handleNoThanksButton" styleClass="buttonToolTips" stylesheets="@../CSS/SceneQueen.css" text="Close" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="18.0" />
-                        <Button fx:id="NextButton" layoutX="208.0" layoutY="95.0" mnemonicParsing="false" onAction="#handleNextButton" styleClass="buttonToolTips" text="Next" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="18.0">
+                        <Button fx:id="NoThanksButton" layoutX="18.0" layoutY="95.0" mnemonicParsing="false" onAction="#onCloseBtn" styleClass="button-tool-tip" stylesheets="@../CSS/SceneQueen.css" text="Close" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="18.0" />
+                        <Button fx:id="NextButton" layoutX="208.0" layoutY="95.0" mnemonicParsing="false" onAction="#onNextBtn" styleClass="button-tool-tip" text="Next" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="18.0">
                            <font>
                               <Font name="Bookshelf Symbol 7" size="12.0" />
                            </font>
@@ -143,27 +143,27 @@
                   </AnchorPane>
                   <AnchorPane fx:id="thirdToolTip" layoutX="29.0" layoutY="-32.0" prefHeight="146.0" prefWidth="279.0" styleClass="tool-tip" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="572.5">
                      <children>
-                        <Button fx:id="NoThanksButton1" layoutX="14.0" layoutY="122.0" mnemonicParsing="false" onAction="#handleNoThanksButton" prefHeight="44.0" prefWidth="77.0" styleClass="buttonToolTips" text="Close" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="18.0" />
+                        <Button fx:id="NoThanksButton1" layoutX="14.0" layoutY="122.0" mnemonicParsing="false" onAction="#onCloseBtn" prefHeight="44.0" prefWidth="77.0" styleClass="button-tool-tip" text="Close" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="18.0" />
                         <Text fill="WHITE" layoutX="16.0" layoutY="36.94000053405762" strokeType="OUTSIDE" strokeWidth="0.0" text="Start a new design project or continue an exisiting project." textAlignment="CENTER" wrappingWidth="249.4227294921875" AnchorPane.bottomAnchor="81.11999893188477" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="13.5772705078125" AnchorPane.topAnchor="19.0">
                            <font>
                               <Font name="Cochin" size="20.0" />
                            </font>
                         </Text>
-                        <Button fx:id="NextButton1" layoutX="195.0" layoutY="122.0" mnemonicParsing="false" onAction="#handleNextButton" prefWidth="73.0" styleClass="buttonToolTips" text="Next" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="18.0">
+                        <Button fx:id="NextButton1" layoutX="195.0" layoutY="122.0" mnemonicParsing="false" onAction="#onNextBtn" prefWidth="73.0" styleClass="button-tool-tip" text="Next" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="18.0">
                            <font>
                               <Font name="Bookshelf Symbol 7" size="12.0" />
                            </font>
                         </Button>
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="fifthToolTip" layoutX="549.0" layoutY="-29.0" maxHeight="163.0" prefHeight="162.0" prefWidth="296.0" styleClass="tool-tip" stylesheets="@../CSS/SceneQueen.css" AnchorPane.bottomAnchor="448.0" AnchorPane.leftAnchor="549.0" AnchorPane.rightAnchor="49.0" AnchorPane.topAnchor="-29.0">
+                  <AnchorPane fx:id="fifthToolTip" layoutX="549.0" layoutY="-29.0" maxHeight="160.0" prefHeight="162.0" prefWidth="277.0" styleClass="tool-tip" stylesheets="@../CSS/SceneQueen.css" AnchorPane.bottomAnchor="448.0" AnchorPane.leftAnchor="548.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="-29.0">
                      <children>
-                        <Text fill="WHITE" layoutX="32.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="buttonToolTips" text="For any questions or requests, contact the team from the Contact tab." textAlignment="CENTER" wrappingWidth="240.055908203125" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="16.0">
+                        <Text fill="WHITE" layoutX="32.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="buttonToolTips" text="For any questions or requests, contact the team from the Contact tab." textAlignment="CENTER" wrappingWidth="240.055908203125" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="16.0">
                            <font>
                               <Font name="Cochin" size="20.0" />
                            </font>
                         </Text>
-                        <Button fx:id="NoThanksButton3" layoutX="22.0" layoutY="78.0" mnemonicParsing="false" onAction="#handleNoThanksButton" prefHeight="44.0" prefWidth="90.0" styleClass="buttonToolTips" text="Got It" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="20.0" />
+                        <Button fx:id="NoThanksButton3" layoutX="22.0" layoutY="78.0" mnemonicParsing="false" onAction="#onCloseBtn" prefHeight="44.0" prefWidth="90.0" styleClass="button-tool-tip" text="Got It" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="98.0" />
                      </children>
                   </AnchorPane>
                </children>

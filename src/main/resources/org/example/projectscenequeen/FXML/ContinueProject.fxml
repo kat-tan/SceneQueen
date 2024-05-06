@@ -18,9 +18,8 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" stylesheets="@../CSS/SceneQueen.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SceneQueen.Controllers.NewProjectController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" stylesheets="@../CSS/SceneQueen.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SceneQueen.Controllers.ContinueProjectController">
    <top>
        <HBox alignment="CENTER_RIGHT" prefHeight="112.0" prefWidth="1243.0" spacing="40.0" stylesheets="@../CSS/SceneQueen.css" BorderPane.alignment="CENTER_LEFT">
            <children>
@@ -140,12 +139,6 @@
                <children>
                   <TextField fx:id="projectNameTextField" promptText="Project Name" styleClass="text-field-new-project" />
                   <Button mnemonicParsing="false" onAction="#onSaveProjectBtn" styleClass="text-field-new-project" text="Save Project" />
-                  <TextField fx:id="enterEmailTextField" promptText="Enter Email" styleClass="text-field-new-project">
-                     <HBox.margin>
-                        <Insets left="46.0" />
-                     </HBox.margin>
-                  </TextField>
-                  <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onVerifyBtn" styleClass="text-field-new-project" text="Verify" />
                </children>
                <padding>
                   <Insets left="20.0" right="10.0" top="20.0" />
@@ -159,79 +152,8 @@
                      </StackPane.margin>
                      <children>
                         <ImageView fitHeight="62.0" fitWidth="81.0" layoutX="736.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" />
-                        <VBox fx:id="firstToolTip" alignment="CENTER" layoutX="312.0" layoutY="315.0" prefHeight="150.0" prefWidth="265.0" styleClass="tool-tip-new-project">
-                           <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Welcome to your new project. Click next for some tool tips!" textAlignment="CENTER" wrappingWidth="198.58456420898438">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Text>
-                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="70.0">
-                                 <children>
-                                    <Button mnemonicParsing="false" onAction="#onCloseBtn" styleClass="button-tool-tip-new-project" text="Close" />
-                                    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onNextBtn" styleClass="button-tool-tip-new-project" text="Next" />
-                                 </children>
-                                 <padding>
-                                    <Insets bottom="10.0" />
-                                 </padding>
-                              </HBox>
-                           </children>
-                           <padding>
-                              <Insets top="10.0" />
-                           </padding>
-                        </VBox>
-                        <VBox fx:id="secondToolTip" alignment="CENTER" layoutX="24.0" layoutY="20.0" prefHeight="150.0" prefWidth="265.0" styleClass="tool-tip-new-project">
-                           <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Change your project name here and don't forget to save!" textAlignment="CENTER" wrappingWidth="198.58456420898438">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Text>
-                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="70.0">
-                                 <children>
-                                    <Button mnemonicParsing="false" onAction="#onCloseBtn" styleClass="button-tool-tip-new-project" text="Close" />
-                                    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onNextBtn" styleClass="button-tool-tip-new-project" text="Next" />
-                                 </children>
-                                 <padding>
-                                    <Insets bottom="10.0" />
-                                 </padding>
-                              </HBox>
-                           </children>
-                           <padding>
-                              <Insets top="10.0" />
-                           </padding>
-                        </VBox>
-                        <VBox fx:id="thirdToolTip" alignment="CENTER" layoutX="24.0" layoutY="187.0" prefHeight="150.0" prefWidth="305.0" styleClass="tool-tip-new-project">
-                           <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Drag and drop any object to the stage! Click on an object and a delete option will pop up." textAlignment="CENTER" wrappingWidth="269.9151916503906">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Text>
-                              <HBox alignment="CENTER" prefHeight="31.0" prefWidth="301.0" spacing="105.0">
-                                 <children>
-                                    <Button mnemonicParsing="false" onAction="#onCloseBtn" styleClass="button-tool-tip-new-project" text="Got It!" />
-                                 </children>
-                                 <VBox.margin>
-                                    <Insets top="9.0" />
-                                 </VBox.margin>
-                              </HBox>
-                           </children>
-                        </VBox>
                      </children>
                   </Pane>
-                  <VBox fx:id="alertVBox" alignment="CENTER" fillWidth="false" prefHeight="102.0" prefWidth="783.0" style="-fx-background-color: #BAFFC8;" styleClass="tool-tip" StackPane.alignment="CENTER">
-                     <StackPane.margin>
-                        <Insets bottom="380.0" left="320.0" right="50.0" top="30.0" />
-                     </StackPane.margin>
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter your account email above to begin your project!" textAlignment="CENTER" wrappingWidth="436.20904541015625">
-                           <font>
-                              <Font name="Cochin" size="31.0" />
-                           </font>
-                        </Text>
-                     </children>
-                  </VBox>
                </children>
                <VBox.margin>
                   <Insets left="10.0" right="10.0" />

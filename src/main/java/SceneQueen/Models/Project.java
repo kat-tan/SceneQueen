@@ -1,11 +1,9 @@
 package SceneQueen.Models;
 
-import java.util.List;
-
 public class Project {
     private String email;
     private String projectName;
-    private ProjectStage project;
+    private Stage project;
 
     public Project(String email, String projectName) {
         this.email = email;

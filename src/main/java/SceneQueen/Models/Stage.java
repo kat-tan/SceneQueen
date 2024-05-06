@@ -2,13 +2,13 @@ package SceneQueen.Models;
 
 import java.util.ArrayList;
 
-public class ProjectStage {
+public class Stage {
     private String projectName;
     private double width;
     private double height;
     private ArrayList<Element> elements;
 
-    public ProjectStage(String projectName, double width, double height) {
+    public Stage(String projectName, double width, double height) {
         this.projectName = projectName;
         this.width = width;
         this.height = height;

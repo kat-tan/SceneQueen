@@ -44,5 +44,12 @@
     -fx-font-family: Cochin;
     -fx-font-size: 20px;
 }
+.text-field-new-project {
+    -fx-font-size: 20px;
+    -fx-font-family: Cochin;
+    -fx-background-color: white;
+    -fx-background-radius: 50px;
+
+}
 
 

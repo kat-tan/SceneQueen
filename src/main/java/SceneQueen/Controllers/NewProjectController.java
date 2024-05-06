@@ -1,21 +1,19 @@
 package SceneQueen.Controllers;
 
-import SceneQueen.Encryptor;
 import SceneQueen.Models.Project;
 import SceneQueen.SceneQueenApplication;
-import com.google.cloud.firestore.DocumentReference;
-import com.google.cloud.firestore.Firestore;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.DialogPane;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.*;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.scene.shape.Rectangle;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
 
 public class NewProjectController {
     @FXML
@@ -23,9 +21,72 @@ public class NewProjectController {
     @FXML
     private TextField enterEmailTextField;
     @FXML
-    private VBox vBoxRoot;
+    private VBox alertVBox;
+    @FXML
+    private Pane stagePane;
+    @FXML
+    private ImageView table;
+    @FXML
+    private ImageView chair;
+    @FXML
+    private ImageView light;
+    @FXML
+    private ImageView couch;
+    @FXML
+    private ImageView plant;
+
     private String projectName;
     private String email;
+    private double xStageVal;
+    private double yStageVal;
+
+    @FXML
+    protected void onDragDetected(MouseEvent mouseEvent) {
+        ImageView element = (ImageView)mouseEvent.getSource();
+
+        Dragboard db = element.startDragAndDrop(TransferMode.ANY);
+        ClipboardContent cb = new ClipboardContent();
+        cb.putImage(element.getImage());
+        db.setContent(cb);
+        mouseEvent.consume();
+    }
+
+    @FXML
+    protected void onDragOver(DragEvent dragEvent) {
+        if (dragEvent.getDragboard().hasString()|| dragEvent.getDragboard().hasImage()) {
+            dragEvent.acceptTransferModes(TransferMode.ANY);
+        }
+    }
+
+    @FXML
+    protected void onDragDrop(DragEvent dragEvent) {
+        if (dragEvent.getDragboard().hasImage()){
+            Image image = dragEvent.getDragboard().getImage();
+            ImageView imageView = new ImageView(image);
+            stagePane.getChildren().add(imageView);
+
+            // Update position of the image during dragging
+            imageView.setOnMousePressed(mouseEvent -> {
+                xStageVal = mouseEvent.getSceneX() - imageView.getLayoutX();
+                yStageVal = mouseEvent.getSceneY() - imageView.getLayoutY();
+            });
+
+            imageView.setOnMouseDragged(mouseEvent -> {
+                double newX = mouseEvent.getSceneX() - xStageVal;
+                double newY = mouseEvent.getSceneY() - yStageVal;
+
+                // Keep the image within the bounds of the Stage
+                if (newX >= 0 && newX <= stagePane.getWidth() &&
+                        newY >= 0 && newY <= stagePane.getHeight()) {
+                    imageView.setLayoutX(newX);
+                    imageView.setLayoutY(newY);
+                }
+            });
+
+            dragEvent.setDropCompleted(true);
+        }
+
+    }
 
     @FXML
     protected void onSaveProjectBtn() {
@@ -42,7 +103,7 @@ public class NewProjectController {
         email = enterEmailTextField.getText();
 
         // check if email is in db
-        vBoxRoot.setVisible(false);
+        alertVBox.setVisible(false);
     }
 
     @FXML
@@ -64,20 +125,20 @@ public class NewProjectController {
     }
 
     @FXML
-    protected void initialize() {
-        projectNameTextField.setText("New Project");
-        projectName = "New Project";
-        Project newProject = new Project("email", projectName);
-
-    }
-
-    @FXML
     protected void onLogoClicked(MouseEvent mouseEvent) {
         try {
             SceneQueenApplication.setRoot("MainPage");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @FXML
+    protected void initialize() {
+        projectNameTextField.setText("New Project");
+        projectName = "New Project";
+        Project newProject = new Project("email", projectName);
+
     }
 
 }

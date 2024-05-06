@@ -6,72 +6,69 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.*;
 import javafx.scene.layout.Pane;
-import javafx.scene.shape.Circle;
 
 public class DragController {
     @FXML
-    private ImageView Chair;
+    private ImageView table;
     @FXML
-    private ImageView lights;
+    private ImageView chair;
     @FXML
-    private ImageView Sofa;
+    private ImageView light;
+    @FXML
+    private ImageView couch;
     @FXML
     private Pane Stage;
-    @FXML
-    private ImageView Table;
 
     private double x;
     private double y;
 
     @FXML
-    void dragDetect_lights(MouseEvent event) {
-
-        Dragboard db = lights.startDragAndDrop(TransferMode.ANY);
+    protected void dragDetect_lights(MouseEvent event) {
+        Dragboard db = light.startDragAndDrop(TransferMode.ANY);
         ClipboardContent cb = new ClipboardContent();
-        cb.putImage(lights.getImage());
+        cb.putImage(light.getImage());
         db.setContent(cb);
         event.consume();
     }
 
 
     @FXML
-    void dragDetect_table(MouseEvent event) {
-        Dragboard db = Table.startDragAndDrop(TransferMode.ANY);
+    protected void dragDetect_table(MouseEvent event) {
+        Dragboard db = table.startDragAndDrop(TransferMode.ANY);
         ClipboardContent cb = new ClipboardContent();
-        cb.putImage(Table.getImage());
+        cb.putImage(table.getImage());
         db.setContent(cb);
         event.consume();
     }
 
     @FXML
-    void dragDetect_Chair(MouseEvent event) {
-        Dragboard db = Chair.startDragAndDrop(TransferMode.ANY);
+    protected void dragDetect_Chair(MouseEvent event) {
+        Dragboard db = chair.startDragAndDrop(TransferMode.ANY);
         ClipboardContent cb = new ClipboardContent();
-        cb.putImage(Chair.getImage());
+        cb.putImage(chair.getImage());
         db.setContent(cb);
         event.consume();
     }
 
     @FXML
-    void dragDetect_Sofa(MouseEvent event) {
-        Dragboard db = Sofa.startDragAndDrop(TransferMode.ANY);
+    protected void dragDetect_Couch(MouseEvent event) {
+        Dragboard db = couch.startDragAndDrop(TransferMode.ANY);
         ClipboardContent cb = new ClipboardContent();
-        cb.putImage(Sofa.getImage());
+        cb.putImage(couch.getImage());
         db.setContent(cb);
         event.consume();
 
     }
 
-
     @FXML
-    void DragOver(DragEvent event) {
+    protected void DragOver(DragEvent event) {
         if (event.getDragboard().hasString()|| event.getDragboard().hasImage()) {
             event.acceptTransferModes(TransferMode.ANY);
         }
     }
 
     @FXML
-    void DragDrop(DragEvent event) {
+    protected void DragDrop(DragEvent event) {
         if (event.getDragboard().hasImage()){
             Image image = event.getDragboard().getImage();
             ImageView imageView = new ImageView(image);

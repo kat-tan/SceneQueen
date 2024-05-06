@@ -5,7 +5,7 @@
     -fx-border-width: 1;
     -fx-border-radius: 50px;
     -fx-prompt-text-fill: black ;
-    -fx-font-size: 20;
+    -fx-font-size: 20px;
 }
 .button {
     -fx-background-color: #DCCDFF;

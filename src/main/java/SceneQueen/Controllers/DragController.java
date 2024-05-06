@@ -1,4 +1,4 @@
-package SceneQueen;
+package SceneQueen.Controllers;
 
 
 import javafx.fxml.FXML;

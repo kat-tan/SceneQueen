@@ -12,7 +12,7 @@ public class User {
         this.lastName = lastName;
     }
 
-    public User() { } // Used for TEST
+    public User() { }
 
     public String getEmail() {
         return email;
@@ -46,6 +46,9 @@ public class User {
         this.lastName = lastName;
     }
 
-    public String getFullName() {return firstName + " " + lastName;}
+    // Only used for TEST class
+    public String getFullName() {
+        return firstName + " " + lastName;
+    }
 }
 

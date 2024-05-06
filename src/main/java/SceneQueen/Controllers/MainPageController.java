@@ -52,7 +52,7 @@ public class MainPageController {
     }
 
     @FXML
-    private void handleNextButton(ActionEvent event) {
+    private void onNextBtn(ActionEvent event) {
         if (currentToolTipIndex < toolTips.size() - 1) {
 
             Node currentToolTip = toolTips.get(currentToolTipIndex);
@@ -65,7 +65,7 @@ public class MainPageController {
     }
 
     @FXML
-    private void handleNoThanksButton(ActionEvent event) {
+    private void onCloseBtn (ActionEvent event) {
         clearToolTips();
     }
 

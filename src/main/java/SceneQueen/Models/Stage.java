@@ -46,6 +46,4 @@ public class Stage {
     public void setElements(ArrayList<Element> elements) {
         this.elements = elements;
     }
-
-
 }

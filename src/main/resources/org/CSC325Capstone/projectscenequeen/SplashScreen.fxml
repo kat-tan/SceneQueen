@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="splashRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.CSC325Capstone.projectscenequeen.SplashScreenController">
+   <children>
+      <ImageView fitHeight="404.0" fitWidth="601.0">
+         <image>
+            <Image url="@lights.jpeg" />
+         </image>
+      </ImageView>
+      <Text fill="#4359ff" stroke="WHITE" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="3.0" text="SceneQueen">
+         <font>
+            <Font name="Cochin Bold" size="57.0" />
+         </font>
+      </Text>
+   </children>
+</StackPane>

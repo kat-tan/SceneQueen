@@ -6,6 +6,7 @@ import SceneQueen.SceneQueenApplication;
 import com.google.cloud.firestore.CollectionReference;
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.Firestore;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -176,4 +177,12 @@ public class NewProjectController {
         return email;
     }
 
+    public void onCloseBtn(ActionEvent actionEvent) {
+    }
+
+    public void onNextBtn(ActionEvent actionEvent) {
+    }
+
+    public void onDeleteButton(ActionEvent actionEvent) {
+    }
 }

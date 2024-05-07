@@ -1,13 +1,18 @@
 package SceneQueen.Controllers;
 
 import SceneQueen.SceneQueenApplication;
+import javafx.application.HostServices;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
+
 import java.io.IOException;
+
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +23,28 @@ public class MainPageController {
     @FXML
     private List<Node> toolTips = new ArrayList<>();
     private int currentToolTipIndex = 0;
+    private HostServices hostServices;
+    @FXML
+    private Hyperlink itemRequestHyperLink;
+
+    public void setHostServices(HostServices hostServices) {
+        this.hostServices = hostServices;
+    }
+
+    @FXML
+    public void Hyperlink() {
+        itemRequestHyperLink.setOnAction(event -> handleItemRequest());
+    }
+
+    private void handleItemRequest() {
+        String url = "https://docs.google.com/forms/d/e/1FAIpQLSd-VxOPhPRYJb_Hk3VMcjvZt9DIwMNaMKpOeksppacNfVRFWA/viewform?usp=sf_link";
+        if (hostServices != null) {
+            hostServices.showDocument(url);
+        } else {
+            System.out.println("HostServices not initialized.");
+        }
+    }
+
 
     @FXML
     protected void onMeetTheTeamMenuItem() {

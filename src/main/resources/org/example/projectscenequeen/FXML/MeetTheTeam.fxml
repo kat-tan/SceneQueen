@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.image.Image?>
@@ -66,7 +67,72 @@
                   <Insets top="20.0" />
                </VBox.margin>
             </Text>
-            <AnchorPane prefHeight="687.0" prefWidth="1196.0" />
+            <HBox prefHeight="466.0" prefWidth="1354.0">
+               <children>
+                  <ImageView fitHeight="361.0" fitWidth="198.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="50.0" right="25.0" top="25.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../Elements/luisavphoto(1).jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="377.0" fitWidth="226.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Elements/katphoto.jpg" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="50.0" right="25.0" top="25.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="371.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Elements/OliviaPhoto.jpg" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="50.0" right="25.0" top="25.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="348.0" fitWidth="280.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Elements/mPhoto.jpg" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="50.0" right="25.0" top="25.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+               <VBox.margin>
+                  <Insets top="25.0" />
+               </VBox.margin></HBox>
+            <AnchorPane prefHeight="408.0" prefWidth="1196.0">
+               <children>
+                   <Hyperlink fx:id="linkLuisa" layoutX="55.0" layoutY="104.0" onAction="#openWebpage" prefHeight="39.0" prefWidth="221.0" text="https://github.com/Luisa-Valencia-C" />
+                   <Hyperlink fx:id="linkKat" layoutX="320.0" layoutY="104.0" onAction="#openWebpage" text="https://github.com/kat-tan" />
+                   <Hyperlink fx:id="linkLiiv" layoutX="628.0" layoutY="104.0" onAction="#openWebpage" text="https://github.com/liivsan" />
+                   <Hyperlink fx:id="linkMichelle" layoutX="952.0" layoutY="104.0" onAction="#openWebpage" text="https://github.com/Mparisi03" />
+                  <Text layoutX="970.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Michelle Parisi" wrappingWidth="236.8555908203125">
+                     <font>
+                        <Font name="DejaVu Sans Mono Bold" size="22.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="635.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Olivia Sanfilippo">
+                     <font>
+                        <Font name="Arial Bold" size="22.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="359.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kathleen Tan">
+                     <font>
+                        <Font name="Arial Bold" size="22.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="49.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Luisa Valencia">
+                     <font>
+                        <Font name="DejaVu Sans Mono Bold" size="22.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
          </children>
       </VBox>
    </right>

@@ -32,7 +32,7 @@
     -fx-border-width: 2;
 
 }
-.buttonToolTips {
+.button-tool-tip {
     -fx-background-color: #7135FF;
     -fx-font-family: Cochin;
     -fx-border-color: #FFFFFF;
@@ -49,7 +49,36 @@
     -fx-font-family: Cochin;
     -fx-background-color: white;
     -fx-background-radius: 50px;
+}
+.tool-tip-new-project {
+    -fx-background-color: #FFFFBA;
+    -fx-background-radius: 10px;
 
+    -fx-text-fill: black;
+    -fx-font-family: Cochin;
+    -fx-font-size: 20;
+
+    -fx-border-color: black;
+    -fx-border-radius: 10px;
+    -fx-border-width: 2;
+
+}
+.button-tool-tip-new-project {
+    -fx-background-color: #FFFFBA;
+    -fx-font-family: Cochin;
+    -fx-border-color: black;
+    -fx-border-width: 2;
+    -fx-border-radius: 50px;
+    -fx-text-fill: black;
+}
+.button-delete {
+    -fx-background-color: #FFB0B8;
+    -fx-background-radius: 50px;
+    -fx-font-family: Cochin;
+    -fx-border-color: black;
+    -fx-border-width: 2;
+    -fx-border-radius: 50px;
+    -fx-text-fill: black;
 }
 
 

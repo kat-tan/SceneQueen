@@ -125,6 +125,14 @@
                         <Insets left="23.0" />
                      </GridPane.margin>
                   </ImageView>
+                  <ImageView fx:id="bed" fitHeight="82.0" fitWidth="138.0" onDragDetected="#onDragDetected" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <image>
+                        <Image url="@../Elements/bed.png" />
+                     </image>
+                     <GridPane.margin>
+                        <Insets left="20.0" top="-1.0" />
+                     </GridPane.margin>
+                  </ImageView>
                </children>
             </GridPane>
          </children>
@@ -159,14 +167,108 @@
                      </StackPane.margin>
                      <children>
                         <ImageView fitHeight="62.0" fitWidth="81.0" layoutX="736.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" />
+                        <VBox fx:id="firstToolTip" alignment="CENTER" layoutX="312.0" layoutY="315.0" prefHeight="150.0" prefWidth="265.0" styleClass="tool-tip-new-project">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Welcome to your new project. Click next for some tool tips!" textAlignment="CENTER" wrappingWidth="198.58456420898438">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Text>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="70.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#onCloseBtn" styleClass="button-tool-tip-new-project" text="Close" />
+                                    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onNextBtn" styleClass="button-tool-tip-new-project" text="Next" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </VBox>
+                        <VBox fx:id="secondToolTip" alignment="CENTER" layoutX="24.0" layoutY="20.0" prefHeight="150.0" prefWidth="265.0" styleClass="tool-tip-new-project">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Change your project name here and don't forget to save!" textAlignment="CENTER" wrappingWidth="198.58456420898438">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Text>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="70.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#onCloseBtn" styleClass="button-tool-tip-new-project" text="Close" />
+                                    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onNextBtn" styleClass="button-tool-tip-new-project" text="Next" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </VBox>
+                        <VBox fx:id="thirdToolTip" alignment="CENTER" layoutX="24.0" layoutY="101.0" prefHeight="106.0" prefWidth="301.0" styleClass="tool-tip-new-project">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Drag and drop any object to the stage!" textAlignment="CENTER" wrappingWidth="263.0841369628906">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <HBox alignment="CENTER" prefHeight="45.0" prefWidth="306.0" spacing="105.0">
+                                 <VBox.margin>
+                                    <Insets top="9.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="70.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#onCloseBtn" styleClass="button-tool-tip-new-project" text="Close" />
+                                    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onNextBtn" styleClass="button-tool-tip-new-project" text="Next" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <Button fx:id="deleteButton" layoutX="18.0" layoutY="460.0" mnemonicParsing="false" onAction="#onDeleteButton" styleClass="button-delete" text="Delete Element" />
+                        <VBox fx:id="fourthToolTip" alignment="CENTER" layoutX="35.0" layoutY="296.0" prefHeight="137.0" prefWidth="291.0" styleClass="tool-tip-new-project">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Click on an object and then the &quot;Delete Element&quot; button to remove the item." textAlignment="CENTER" wrappingWidth="280.1617126464844">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <HBox alignment="CENTER" prefHeight="45.0" prefWidth="306.0" spacing="105.0">
+                                 <VBox.margin>
+                                    <Insets top="9.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="70.0">
+                                 <children>
+                                    <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onCloseBtn" styleClass="button-tool-tip-new-project" text="Got it!" />
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </VBox>
                      </children>
                   </Pane>
-                  <VBox fx:id="alertVBox" alignment="CENTER" fillWidth="false" prefHeight="322.0" prefWidth="687.0" styleClass="tool-tip" StackPane.alignment="CENTER">
+                  <VBox fx:id="alertVBox" alignment="CENTER" fillWidth="false" prefHeight="102.0" prefWidth="783.0" style="-fx-background-color: #BAFFC8;" styleClass="tool-tip" StackPane.alignment="CENTER">
                      <StackPane.margin>
-                        <Insets bottom="375.0" left="150.0" right="150.0" top="70.0" />
+                        <Insets bottom="380.0" left="320.0" right="50.0" top="30.0" />
                      </StackPane.margin>
                      <children>
-                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter your account email above!" textAlignment="CENTER">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter your account email above to begin your project!" textAlignment="CENTER" wrappingWidth="436.20904541015625">
                            <font>
                               <Font name="Cochin" size="31.0" />
                            </font>

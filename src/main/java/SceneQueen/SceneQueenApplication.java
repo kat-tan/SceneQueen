@@ -20,7 +20,7 @@ public class SceneQueenApplication extends Application {
     public static Scene scene;
     public static Firestore fstore;
     public static FirebaseAuth fauth;
-    
+
     @Override
     public void start(Stage stage) throws IOException {
         FileInputStream serviceAccount = new FileInputStream

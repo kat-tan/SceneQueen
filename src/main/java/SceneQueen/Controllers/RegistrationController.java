@@ -12,22 +12,33 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 
 public class RegistrationController {
-    public VBox vBoxRoot;
-    public TextField firstNameTextField;
-    public TextField lastNameTextField;
-    public TextField emailTextField;
-    public PasswordField passwordTextField;
-    public PasswordField confirmPasswordTextField;
+    @FXML
+    private VBox vBoxRoot;
+    @FXML
+    private TextField firstNameTextField;
+    @FXML
+    private TextField lastNameTextField;
+    @FXML
+    private TextField emailTextField;
+    @FXML
+    private PasswordField passwordTextField;
+    @FXML
+    private PasswordField confirmPasswordTextField;
 
-    public Alert alert = new Alert(Alert.AlertType.WARNING);
+    private Alert alert = new Alert(Alert.AlertType.WARNING);
+
+
 
     @FXML
     protected void onReturnToLoginBtn() {
@@ -96,14 +107,14 @@ public class RegistrationController {
                 // User added successfully, navigate to sign in page
                 System.out.println("User added successfully");
 
-//                ImageView icon = new ImageView("@../Images/SQLogo.png");
-//                icon.setFitHeight(48);
-//                icon.setFitWidth(48);
-//                alert.setTitle("Confirmation");
-//                alert.setHeaderText("Account Confirmation");
-//                alert.setContentText("A SceneQueen account has been created!");
-//                alert.getDialogPane().setGraphic(icon);
-//                alert.showAndWait();
+                ImageView icon = new ImageView(getClass().getResource("/org/example/projectscenequeen/Images/SQCrown.png").toString());
+                icon.setFitHeight(50);
+                icon.setFitWidth(50);
+                alert.setTitle("Confirmation");
+                alert.setHeaderText("Account Confirmation");
+                alert.setContentText("A SceneQueen account has been created!");
+                alert.setGraphic(icon);
+                alert.showAndWait();
 
                 try {
                     SceneQueenApplication.setRoot("SignIn");
@@ -115,6 +126,11 @@ public class RegistrationController {
             System.out.println("Error accessing database: " + e.getMessage());
         } catch (FirebaseAuthException e) {
             System.out.println("Error authenticating.");
+
+            alert.setTitle("Error");
+            alert.setHeaderText("Email Error");
+            alert.setContentText("Please enter a valid email address.");
+            alert.showAndWait();
         }
     }
 }

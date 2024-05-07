@@ -80,5 +80,10 @@
     -fx-border-radius: 50px;
     -fx-text-fill: black;
 }
+.text-meet-the-team {
+    -fx-font-size: 30px;
+    -fx-font-family: Cochin;
+    -fx-fill: black;
+}
 
 

@@ -13,7 +13,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.*;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -39,6 +39,8 @@ public class ContinueProjectController {
     private static String email;
     private double xStageVal;
     private double yStageVal;
+    private ImageView lastClickedImageView;
+
 
     public void onContinueProjectButton() {
         try {
@@ -47,7 +49,7 @@ public class ContinueProjectController {
             throw new RuntimeException(e);
         }
 
-        String email = getCurrentUserEmail();
+        String email = String.valueOf(getCurrentUserEmail());
 
         Firestore firestore = SceneQueenApplication.getFirestore();
         DocumentReference userRef = firestore.collection("users").document(email);
@@ -90,7 +92,7 @@ public class ContinueProjectController {
         }, MoreExecutors.directExecutor());
     }
 
-    private String getCurrentUserEmail() {
+    private TextField getCurrentUserEmail() {
         return NewProjectController.getCurrentUserEmail();
     }
 
@@ -230,7 +232,7 @@ public class ContinueProjectController {
             return;
         }
 
-        String email = getCurrentUserEmail();
+        String email = String.valueOf(getCurrentUserEmail());
 
         Firestore firestore = SceneQueenApplication.getFirestore();
         DocumentReference userRef = firestore.collection("users").document(email);

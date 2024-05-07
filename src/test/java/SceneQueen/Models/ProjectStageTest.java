@@ -9,29 +9,29 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ProjectStageTest {
 
-    private ProjectStage projectStage;
+    private Stage stage;
 
     @BeforeEach
     void setUp() {
-        projectStage = new ProjectStage("Test Project", 800, 600);
+        stage = new Stage("Test Project", 800, 600);
     }
 
     @Test
     void setProjectNameTest() {
-        projectStage.setProjectName("New Project Name");
-        assertEquals("New Project Name", projectStage.getProjectName());
+        stage.setProjectName("New Project Name");
+        assertEquals("New Project Name", stage.getProjectName());
     }
 
     @Test
     void setWidthTest() {
-        projectStage.setWidth(1024);
-        assertEquals(1024, projectStage.getWidth());
+        stage.setWidth(1024);
+        assertEquals(1024, stage.getWidth());
     }
 
     @Test
     void getHeightTest() {
-        projectStage.setHeight(768);
-        assertEquals(768, projectStage.getHeight());
+        stage.setHeight(768);
+        assertEquals(768, stage.getHeight());
     }
 
     @Test
@@ -39,7 +39,7 @@ class ProjectStageTest {
         ArrayList<Element> elements = new ArrayList<>();
         elements.add(new Element("Element 1"));
         elements.add(new Element("Element 2"));
-        projectStage.setElements(elements);
-        assertEquals(2, projectStage.getElements().size());
+        stage.setElements(elements);
+        assertEquals(2, stage.getElements().size());
     }
 }

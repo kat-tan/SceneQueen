@@ -1,23 +1,44 @@
 package SceneQueen.Controllers;
 
 import SceneQueen.SceneQueenApplication;
+import com.google.api.core.ApiFuture;
+import com.google.cloud.firestore.*;
+import com.google.common.util.concurrent.MoreExecutors;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ExecutionException;
 
 public class MainPageController {
 
     @FXML
-    private AnchorPane firstToolTip, secondToolTip, thirdToolTip, fourthToolTip, fifthToolTip;
+    AnchorPane firstToolTip;
     @FXML
-    private List<Node> toolTips = new ArrayList<>();
-    private int currentToolTipIndex = 0;
+    AnchorPane secondToolTip;
+    @FXML
+    AnchorPane thirdToolTip;
+    @FXML
+    AnchorPane fourthToolTip;
+    @FXML
+    AnchorPane fifthToolTip;
+    @FXML
+    List<Node> toolTips = new ArrayList<>();
+    @FXML
+    Pane stagePane;
+    int currentToolTipIndex = 0;
+    public static Scene scene;
 
     @FXML
     protected void onMeetTheTeamMenuItem() {
@@ -38,7 +59,7 @@ public class MainPageController {
     }
 
     @FXML
-    protected void onCreateProjectButton() {
+    protected void onCreateProjectButton(ActionEvent actionEvent) {
         try {
             SceneQueenApplication.setRoot("NewProject");
         } catch (IOException e) {
@@ -47,7 +68,7 @@ public class MainPageController {
     }
 
     @FXML
-    protected void onContinueProjectButton() {
+    protected void onContinueProjectButton(ActionEvent actionEvent) {
         try {
             SceneQueenApplication.setRoot("ContinueProject");
         } catch (IOException e) {
@@ -56,7 +77,7 @@ public class MainPageController {
     }
 
     @FXML
-    private void onNextBtn(ActionEvent event) {
+    void handleNextButton(ActionEvent event) {
         if (currentToolTipIndex < toolTips.size() - 1) {
 
             Node currentToolTip = toolTips.get(currentToolTipIndex);
@@ -69,7 +90,7 @@ public class MainPageController {
     }
 
     @FXML
-    private void onCloseBtn (ActionEvent event) {
+    void handleNoThanksButton(ActionEvent event) {
         clearToolTips();
     }
 
@@ -81,7 +102,7 @@ public class MainPageController {
     }
 
     @FXML
-    private void initialize() {
+    void initialize() {
         toolTips.add(firstToolTip);
         toolTips.add(secondToolTip);
         toolTips.add(thirdToolTip);

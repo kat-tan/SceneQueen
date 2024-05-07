@@ -5,15 +5,12 @@ import SceneQueen.SceneQueenApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.*;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.scene.shape.Rectangle;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -25,7 +22,7 @@ public class NewProjectController {
     @FXML
     private TextField projectNameTextField;
     @FXML
-    private TextField enterEmailTextField;
+    private static TextField enterEmailTextField;
     @FXML
     private VBox alertVBox;
     @FXML
@@ -52,6 +49,10 @@ public class NewProjectController {
     private double xStageVal;
     private double yStageVal;
     private ImageView lastClickedImageView = null;
+
+    public static TextField getCurrentUserEmail() {
+        return enterEmailTextField;
+    }
 
     @FXML
     protected void onDragDetected(MouseEvent mouseEvent) {

@@ -18,6 +18,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" stylesheets="@../CSS/SceneQueen.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SceneQueen.Controllers.ContinueProjectController">
    <top>
@@ -124,14 +125,6 @@
                         <Insets left="23.0" />
                      </GridPane.margin>
                   </ImageView>
-                   <ImageView fx:id="bed" fitHeight="82.0" fitWidth="138.0" onDragDetected="#onDragDetected" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                       <image>
-                           <Image url="@../Elements/bed.png" />
-                       </image>
-                       <GridPane.margin>
-                           <Insets left="20.0" top="-1.0" />
-                       </GridPane.margin>
-                   </ImageView>
                </children>
             </GridPane>
          </children>
@@ -146,7 +139,13 @@
             <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                <children>
                   <TextField fx:id="projectNameTextField" promptText="Project Name" styleClass="text-field-new-project" />
-                  <Button mnemonicParsing="false" onAction="#onSaveProjectBtn" styleClass="text-field-new-project" text="Save Project" />
+                  <Button mnemonicParsing="false" onAction="#onSearchProjectBtn" prefHeight="43.0" prefWidth="202.0" styleClass="text-field-new-project" text="Search for Project" />
+                  <TextField fx:id="enterEmailTextField" prefHeight="43.0" prefWidth="194.0" promptText="Enter Email" styleClass="text-field-new-project">
+                     <HBox.margin>
+                        <Insets left="46.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#onVerifyBtn" prefHeight="43.0" prefWidth="83.0" styleClass="text-field-new-project" text="Verify" />
                </children>
                <padding>
                   <Insets left="20.0" right="10.0" top="20.0" />
@@ -160,9 +159,20 @@
                      </StackPane.margin>
                      <children>
                         <ImageView fitHeight="62.0" fitWidth="81.0" layoutX="736.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" />
-                        <Button fx:id="deleteButton" layoutX="18.0" layoutY="460.0" mnemonicParsing="false" onAction="#onDeleteButton" styleClass="button-delete" text="Delete Element" />
                      </children>
                   </Pane>
+                  <VBox fx:id="alertVBox" alignment="CENTER" fillWidth="false" prefHeight="322.0" prefWidth="687.0" styleClass="tool-tip" StackPane.alignment="CENTER">
+                     <StackPane.margin>
+                        <Insets bottom="375.0" left="150.0" right="150.0" top="70.0" />
+                     </StackPane.margin>
+                     <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter your account email above to search for Project!" textAlignment="CENTER" wrappingWidth="576.8143882751465">
+                           <font>
+                              <Font name="Cochin" size="31.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </VBox>
                </children>
                <VBox.margin>
                   <Insets left="10.0" right="10.0" />

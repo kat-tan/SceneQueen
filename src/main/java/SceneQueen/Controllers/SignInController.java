@@ -38,7 +38,7 @@ public class SignInController {
         } else {
             System.out.println("Error: Not Authenticated");
 
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Login Error");
             alert.setHeaderText("Invalid Information");
             alert.setContentText("Email or password is incorrect.");

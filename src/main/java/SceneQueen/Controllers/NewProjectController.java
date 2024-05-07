@@ -77,6 +77,7 @@ public class NewProjectController {
             Image image = dragEvent.getDragboard().getImage();
             ImageView imageView = new ImageView(image);
             imageView.setOnMouseClicked(lastCLick -> lastClickedImageView = imageView);
+
             stagePane.getChildren().add(imageView);
 
             // Update position of the image during dragging

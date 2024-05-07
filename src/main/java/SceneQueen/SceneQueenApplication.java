@@ -36,6 +36,7 @@ public class SceneQueenApplication extends Application {
         scene = new Scene(loadFXML("SignIn"));
         stage.setScene(scene);
         stage.sizeToScene();
+        stage.setResizable(false);
         stage.show();
     }
 

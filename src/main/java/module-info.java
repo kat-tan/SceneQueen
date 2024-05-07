@@ -12,6 +12,7 @@ module org.example.projectscenequeen {
     requires google.cloud.core;
     requires com.google.api.apicommon;
     requires com.google.common;
+    requires java.desktop;
 
     opens SceneQueen to javafx.fxml;
     exports SceneQueen;

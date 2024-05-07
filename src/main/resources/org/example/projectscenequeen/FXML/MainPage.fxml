@@ -47,7 +47,7 @@
             <MenuButton contentDisplay="TEXT_ONLY" mnemonicParsing="false" stylesheets="@../CSS/SceneQueen.css" text="Contact">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#onMeetTheTeamMenuItem" text="Meet the Team" />
-                  <MenuItem mnemonicParsing="false" text="Item Request" />
+                  <MenuItem mnemonicParsing="false" onAction="#onItemRequest" text="Item Request" />
                </items>
                <font>
                   <Font size="30.0" />

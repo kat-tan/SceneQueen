@@ -16,21 +16,18 @@
    <top>
        <HBox alignment="CENTER_RIGHT" prefHeight="112.0" prefWidth="1243.0" spacing="40.0" stylesheets="@../CSS/SceneQueen.css" BorderPane.alignment="CENTER_LEFT">
            <children>
-               <ImageView fitHeight="112.0" fitWidth="258.0" onMouseClicked="#onLogoClicked" pickOnBounds="true" preserveRatio="true" scaleX="1.1" scaleY="1.1" translateX="-626.0" HBox.hgrow="NEVER">
+            <ImageView fitHeight="112.0" fitWidth="258.0" onMouseClicked="#onLogoClicked" pickOnBounds="true" preserveRatio="true" scaleX="1.1" scaleY="1.1" translateX="-626.0">
                <image>
                   <Image url="@../Images/SQLogo.png" />
                </image>
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
                <viewport>
                   <Rectangle2D />
                </viewport>
-               </ImageView>
+            </ImageView>
                <MenuButton contentDisplay="TEXT_ONLY" mnemonicParsing="false" stylesheets="@../CSS/SceneQueen.css" text="Contact">
                    <items>
                        <MenuItem mnemonicParsing="false" text="Meet the Team" />
-                       <MenuItem mnemonicParsing="false" text="Item Request" />
+                       <MenuItem mnemonicParsing="false" onAction="#onItemRequest" text="Item Request" />
                    </items>
                    <font>
                        <Font size="30.0" />
@@ -75,6 +72,14 @@
                            </image>
                         </ImageView>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-meet-the-team" text="Kathleen Tan" />
+                           <ImageView fitHeight="112.0" fitWidth="258.0" onMouseClicked="#onKatGitHub" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/github.png" />
+                           </image>
+                           <viewport>
+                              <Rectangle2D />
+                           </viewport>
+                           </ImageView>
                      </children>
                   </VBox>
                   <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
@@ -85,6 +90,14 @@
                            </image>
                         </ImageView>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-meet-the-team" text="Olivia Sanfilippo" />
+                        <ImageView fitHeight="112.0" fitWidth="258.0" onMouseClicked="#onOliviaGitHub" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/github.png" />
+                           </image>
+                           <viewport>
+                              <Rectangle2D />
+                           </viewport>
+                        </ImageView>
                      </children>
                   </VBox>
                   <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
@@ -95,6 +108,14 @@
                            </image>
                         </ImageView>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-meet-the-team" text="Michelle Parisi" />
+                        <ImageView fitHeight="112.0" fitWidth="258.0" onMouseClicked="#onMichelleGitHub" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/github.png" />
+                           </image>
+                           <viewport>
+                              <Rectangle2D />
+                           </viewport>
+                        </ImageView>
                      </children>
                   </VBox>
                   <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
@@ -105,6 +126,14 @@
                            </image>
                         </ImageView>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-meet-the-team" text="Luisa Valencia" />
+                        <ImageView fitHeight="112.0" fitWidth="258.0" onMouseClicked="#onLuisaGitHub" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/github.png" />
+                           </image>
+                           <viewport>
+                              <Rectangle2D />
+                           </viewport>
+                        </ImageView>
                      </children>
                   </VBox>
                </children>

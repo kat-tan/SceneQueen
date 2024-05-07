@@ -11,14 +11,19 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class will handle the main page functions. The user can create a new project or continue one.
+ */
 public class MainPageController {
-
     @FXML
     private AnchorPane firstToolTip, secondToolTip, thirdToolTip, fourthToolTip, fifthToolTip;
     @FXML
     private List<Node> toolTips = new ArrayList<>();
     private int currentToolTipIndex = 0;
 
+    /**
+     * This method will navigate to the Meet the Team page.
+     */
     @FXML
     protected void onMeetTheTeamMenuItem() {
         try {
@@ -28,6 +33,9 @@ public class MainPageController {
         }
     }
 
+    /**
+     * This method moves the user back to the sign in page of SceneQueen.
+     */
     @FXML
     protected void onLogoutButton() {
         try {
@@ -37,6 +45,9 @@ public class MainPageController {
         }
     }
 
+    /**
+     * This method moves the user to a New Project page.
+     */
     @FXML
     protected void onCreateProjectButton() {
         try {
@@ -45,6 +56,7 @@ public class MainPageController {
             throw new RuntimeException(e);
         }
     }
+
 
     @FXML
     protected void onContinueProjectButton() {
@@ -55,6 +67,11 @@ public class MainPageController {
         }
     }
 
+    /**
+     * This method will move to the next tool tip when the next button is clicked.
+     *
+     * @param event
+     */
     @FXML
     private void onNextBtn(ActionEvent event) {
         if (currentToolTipIndex < toolTips.size() - 1) {
@@ -68,11 +85,17 @@ public class MainPageController {
         }
     }
 
+    /**
+     * This method will close the tool tip.
+     */
     @FXML
     private void onCloseBtn (ActionEvent event) {
         clearToolTips();
     }
 
+    /**
+     * This method will close the tool tip.
+     */
     private void clearToolTips() {
         toolTips.forEach(tip -> {
             tip.setVisible(false);
@@ -80,6 +103,9 @@ public class MainPageController {
         currentToolTipIndex = 0;
     }
 
+    /**
+     * Initializes functions needed for the functionalities of the page.
+     */
     @FXML
     private void initialize() {
         toolTips.add(firstToolTip);
@@ -98,6 +124,11 @@ public class MainPageController {
         }
     }
 
+    /**
+     * This method moves the UI back to the main page.
+     *
+     * @param mouseEvent
+     */
     @FXML
     protected void onLogoClicked(MouseEvent mouseEvent) {
         try {

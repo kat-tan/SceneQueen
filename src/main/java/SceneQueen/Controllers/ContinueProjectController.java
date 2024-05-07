@@ -18,6 +18,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * This class will handle the functions when a user continues a project.
+ */
 public class ContinueProjectController {
     @FXML
     private TextField projectNameTextField;
@@ -40,6 +43,11 @@ public class ContinueProjectController {
     private double yStageVal;
     private ImageView lastClickedImageView = null;
 
+    /**
+     * This method will be triggered when a user drags an element.
+     *
+     * @param mouseEvent
+     */
     @FXML
     protected void onDragDetected(MouseEvent mouseEvent) {
         ImageView element = (ImageView)mouseEvent.getSource();
@@ -51,6 +59,13 @@ public class ContinueProjectController {
         mouseEvent.consume();
     }
 
+    /**
+     * This method is invoked when a drag gesture enters the boundary of the UI element.
+     *
+     * @param dragEvent The DragEvent representing the drag operation.
+     *                  It provides information about the drag and allows the current
+     *                  UI element to accept or reject the drag.
+     */
     @FXML
     protected void onDragOver(DragEvent dragEvent) {
         if (dragEvent.getDragboard().hasString()|| dragEvent.getDragboard().hasImage()) {
@@ -58,6 +73,11 @@ public class ContinueProjectController {
         }
     }
 
+    /**
+     * This method handles the drop function when the user stops holding the node.
+     *
+     * @param dragEvent
+     */
     @FXML
     protected void onDragDrop(DragEvent dragEvent) {
         if (dragEvent.getDragboard().hasImage()){
@@ -84,12 +104,13 @@ public class ContinueProjectController {
                     imageView.setLayoutY(newY);
                 }
             });
-
             dragEvent.setDropCompleted(true);
         }
-
     }
 
+    /**
+     * This method removes the last clicked object by the user.
+     */
     @FXML
     protected void onDeleteButton() {
         if (lastClickedImageView != null) {
@@ -108,6 +129,9 @@ public class ContinueProjectController {
 
     }
 
+    /**
+     * This method will navigate to the Meet the Team page.
+     */
     @FXML
     protected void onMeetTheTeamMenuItem() {
         try {
@@ -117,6 +141,9 @@ public class ContinueProjectController {
         }
     }
 
+    /**
+     * This method moves the user back to the sign in page of SceneQueen.
+     */
     @FXML
     protected void onLogoutButton() {
         try {
@@ -126,6 +153,11 @@ public class ContinueProjectController {
         }
     }
 
+    /**
+     * This method moves the UI back to the main page.
+     *
+     * @param mouseEvent
+     */
     @FXML
     protected void onLogoClicked(MouseEvent mouseEvent) {
         try {
@@ -135,6 +167,9 @@ public class ContinueProjectController {
         }
     }
 
+    /**
+     * Initializes functions needed for the functionalities of the page.
+     */
     @FXML
     protected void initialize() {
         projectNameTextField.setText("My Project");
@@ -142,5 +177,4 @@ public class ContinueProjectController {
         Project newProject = new Project("email", projectName);
 
     }
-
 }

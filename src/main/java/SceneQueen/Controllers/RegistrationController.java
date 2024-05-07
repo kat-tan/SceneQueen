@@ -22,6 +22,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ExecutionException;
 
+/**
+ * This class will handle registration functions for a new user to create a SceneQueen account.
+ */
 public class RegistrationController {
     @FXML
     private VBox vBoxRoot;
@@ -38,8 +41,9 @@ public class RegistrationController {
 
     private Alert alert = new Alert(Alert.AlertType.WARNING);
 
-
-
+    /**
+     * This method brings the user back to the main sign in page.
+     */
     @FXML
     protected void onReturnToLoginBtn() {
         try {
@@ -49,6 +53,14 @@ public class RegistrationController {
         }
     }
 
+    /**
+     * This method will verify the user input, mostly the email and password. The passwords must match
+     * each other and the email must be valid. Using Firebase, the email is checked for authentication.
+     * If valid, a new user will be created in Firestore database and the user will be navigated back to
+     * the sign in page.
+     *
+     * @param actionEvent
+     */
     @FXML
     protected void onSubmitButton(ActionEvent actionEvent) {
         String firstName = firstNameTextField.getText();
@@ -60,7 +72,7 @@ public class RegistrationController {
 
         if (!password.equals(confirmPassword)) {
             // Display error message to User
-            System.out.println("Passwords do not match.");
+            // System.out.println("Passwords do not match.");
 
             alert.setTitle("Error");
             alert.setHeaderText("Password Error");
@@ -94,18 +106,23 @@ public class RegistrationController {
                     .setEmailVerified(true);
 
             userRecord = SceneQueenApplication.fauth.createUser(request);
-            System.out.println("Email authenticated.");
+            // System.out.println("Email authenticated.");
 
             // Check if user already exists
             DocumentSnapshot document = docRef.get().get();
             if (document.exists()) {
                 // User already exists, display error message
-                System.out.println("User with email " + email + " already exists");
+                // System.out.println("User with email " + email + " already exists");
+                alert.setTitle("Error");
+                alert.setHeaderText("Duplicate Error");
+                alert.setContentText("Email already has an account.");
+                alert.showAndWait();
+
             } else {
                 // User does not exist, add user to database
                 docRef.set(data).get();
                 // User added successfully, navigate to sign in page
-                System.out.println("User added successfully");
+                // System.out.println("User added successfully");
 
                 ImageView icon = new ImageView(getClass().getResource("/org/example/projectscenequeen/Images/SQCrown.png").toString());
                 icon.setFitHeight(50);
@@ -123,9 +140,9 @@ public class RegistrationController {
                 }
             }
         } catch (InterruptedException | ExecutionException e) {
-            System.out.println("Error accessing database: " + e.getMessage());
+            // System.out.println("Error accessing database: " + e.getMessage());
         } catch (FirebaseAuthException e) {
-            System.out.println("Error authenticating.");
+            // System.out.println("Error authenticating.");
 
             alert.setTitle("Error");
             alert.setHeaderText("Email Error");

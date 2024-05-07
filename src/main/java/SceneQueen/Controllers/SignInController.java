@@ -18,6 +18,9 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
+/**
+ * This class handles the user login interface and functions.
+ */
 public class SignInController {
     @FXML
     private TextField emailTextField;
@@ -26,6 +29,12 @@ public class SignInController {
     @FXML
     protected VBox vBoxRoot;
 
+    /**
+     * This method will check the email and password that the user input to allow sign in if the
+     * information is correct.
+     *
+     * @throws IOException
+     */
     @FXML
     protected void onSubmitButton() throws IOException {
         String email = emailTextField.getText();
@@ -46,13 +55,20 @@ public class SignInController {
         }
     }
 
+    /**
+     * This method will check the user input with the Firebase database to see if the email and password
+     * combination exist.
+     *
+     * @param email
+     * @param password
+     * @return
+     */
     private boolean authenticateUser(String email, String password) {
         CollectionReference users = SceneQueenApplication.fstore.collection("users");
         String hashedPassword = Encryptor.encryptPassword(password);
 
         Query query = users.whereEqualTo("email", email).whereEqualTo("password", hashedPassword);
         ApiFuture<QuerySnapshot> querySnapshot = query.get();
-        // System.out.println("Hashed Password: " + hashedPassword);
 
         try {
             List<QueryDocumentSnapshot> documents = querySnapshot.get().getDocuments();
@@ -65,7 +81,7 @@ public class SignInController {
 
     @FXML
     protected void forgotPasswordPrompt(MouseEvent mouseEvent) {
-        // Future implementation
+        // future implementation
     }
 
     @FXML
@@ -73,14 +89,15 @@ public class SignInController {
         // google authentication
     }
 
+    /**
+     * This method will trigger the Registration page for the user.
+     *
+     * @param mouseEvent
+     * @throws IOException
+     */
     @FXML
     protected void onSignUpHerePrompt(MouseEvent mouseEvent) throws IOException {
         SceneQueenApplication.setRoot("Registration");
-    }
-
-    @FXML
-    protected void initialize() {
-
     }
 
 }

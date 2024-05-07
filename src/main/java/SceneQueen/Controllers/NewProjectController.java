@@ -21,6 +21,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * This class handles the functions of a New Project selection by the user.
+ */
 public class NewProjectController {
     @FXML
     private TextField projectNameTextField;
@@ -53,6 +56,11 @@ public class NewProjectController {
     private double yStageVal;
     private ImageView lastClickedImageView = null;
 
+    /**
+     * This method will be triggered when a user drags an element.
+     *
+     * @param mouseEvent
+     */
     @FXML
     protected void onDragDetected(MouseEvent mouseEvent) {
         ImageView element = (ImageView)mouseEvent.getSource();
@@ -64,6 +72,13 @@ public class NewProjectController {
         mouseEvent.consume();
     }
 
+    /**
+     * This method is invoked when a drag gesture enters the boundary of the UI element.
+     *
+     * @param dragEvent The DragEvent representing the drag operation.
+     *                  It provides information about the drag and allows the current
+     *                  UI element to accept or reject the drag.
+     */
     @FXML
     protected void onDragOver(DragEvent dragEvent) {
         if (dragEvent.getDragboard().hasString()|| dragEvent.getDragboard().hasImage()) {
@@ -71,6 +86,11 @@ public class NewProjectController {
         }
     }
 
+    /**
+     * This method handles the drop function when the user stops holding the node.
+     *
+     * @param dragEvent
+     */
     @FXML
     protected void onDragDrop(DragEvent dragEvent) {
         if (dragEvent.getDragboard().hasImage()){
@@ -110,6 +130,9 @@ public class NewProjectController {
 
     }
 
+    /**
+     * This method removes the last clicked object by the user.
+     */
     @FXML
     protected void onDeleteButton() {
         if (lastClickedImageView != null) {
@@ -117,6 +140,7 @@ public class NewProjectController {
             lastClickedImageView = null;
         }
     }
+
 
     @FXML
     protected void onSaveProjectBtn() {
@@ -137,6 +161,11 @@ public class NewProjectController {
 
     }
 
+    /**
+     * This method will move to the next tool tip when the next button is clicked.
+     *
+     * @param event
+     */
     @FXML
     private void onNextBtn(ActionEvent event) {
         if (currentToolTipIndex < toolTips.size() - 1) {
@@ -150,11 +179,19 @@ public class NewProjectController {
         }
     }
 
+    /**
+     * This method will close the tool tip.
+     *
+     * @param event
+     */
     @FXML
     private void onCloseBtn (ActionEvent event) {
         clearToolTips();
     }
 
+    /**
+     * This method will close the tool tip.
+     */
     @FXML
     private void clearToolTips() {
         toolTips.forEach(tip -> {
@@ -163,6 +200,9 @@ public class NewProjectController {
         currentToolTipIndex = 0;
     }
 
+    /**
+     * This method will navigate to the Meet the Team page.
+     */
     @FXML
     protected void onMeetTheTeamMenuItem() {
         try {
@@ -172,6 +212,9 @@ public class NewProjectController {
         }
     }
 
+    /**
+     * This method moves the user back to the sign in page of SceneQueen.
+     */
     @FXML
     protected void onLogoutButton() {
         try {
@@ -181,6 +224,11 @@ public class NewProjectController {
         }
     }
 
+    /**
+     * This method moves the UI back to the main page.
+     *
+     * @param mouseEvent
+     */
     @FXML
     protected void onLogoClicked(MouseEvent mouseEvent) {
         try {
@@ -190,6 +238,9 @@ public class NewProjectController {
         }
     }
 
+    /**
+     * Initializes functions needed for the functionalities of the page.
+     */
     @FXML
     protected void initialize() {
         projectNameTextField.setText("My Project");
@@ -209,7 +260,5 @@ public class NewProjectController {
         if (!toolTips.isEmpty() && toolTips.get(0) != null) {
             toolTips.get(0).setVisible(true);
         }
-
     }
-
 }

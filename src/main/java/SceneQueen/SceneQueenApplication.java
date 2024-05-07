@@ -16,6 +16,9 @@ import com.google.firebase.cloud.FirestoreClient;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+/**
+ *
+ */
 public class SceneQueenApplication extends Application {
     public static Scene scene;
     public static Firestore fstore;
@@ -53,10 +56,20 @@ public class SceneQueenApplication extends Application {
         return fxmlLoader.load();
     }
 
+    /**
+     * This method gets the Firestore instance.
+     *
+     * @return The Firestore instance.
+     */
     public static Firestore getFirestore() {
         return FirestoreClient.getFirestore();
     }
 
+    /**
+     * This method is the main entry point for the application.
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         launch();
     }
